@@ -15,8 +15,8 @@ public class PathCommander {
 				System.out.println(path + "/" + file.getName());
 				//SebFyn(path + "/" + file.getName());
 			}
-			
 		}
+ 		//change directory
 		for (File directory : listOfFiles) {
 			if (directory.isDirectory()) {
 				String subpath = directory.getPath();
@@ -24,7 +24,6 @@ public class PathCommander {
 					subpath = subpath.replace("\\", "/");
 				}
 				getPath(directory.getPath());
-				//SebFyn(getPath(directory.getPath()););
 			}
 		}
 	}
