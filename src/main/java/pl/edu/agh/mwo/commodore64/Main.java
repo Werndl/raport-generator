@@ -5,7 +5,8 @@ public class Main
 	public static void main(String[] args)
 	{
 		//tworzenie tabeli zbiorczej
-		//stworzenie Workbooka do tabeli zbiorczej, który bêdzie przekazywany do funkcji
-		//usuniêcie tabeli zbiorczej
+		//stworzenie Workbooka do tabeli zbiorczej, ktï¿½ry bï¿½dzie przekazywany do funkcji
+		//usuniï¿½cie tabeli zbiorczej
+		PathCommander.getPath("E:/OneDrive/Documents");
 	}
 }
