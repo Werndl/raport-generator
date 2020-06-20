@@ -11,7 +11,7 @@ public class PathCommander {
 			path = path.replace("\\", "/");
 		}
  		for (File file : listOfFiles) {
-			if(!file.isDirectory()) {
+			if(!file.isDirectory() && file.getName().contains(".xls")) {
 				System.out.println(path + "/" + file.getName());
 				//SebFyn(path + "/" + file.getName());
 			}
