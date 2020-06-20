@@ -13,7 +13,7 @@ public class Intro {
 		
 		System.out.println("Prosze podac sciezke katalogu:");
 		String path = scan.next();
-		scan.close();
+		
 
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 		return path;
