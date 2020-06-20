@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/report-generator.iml" filepath="$PROJECT_DIR$/report-generator.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/raport-generator-beata.iml" filepath="$PROJECT_DIR$/.idea/raport-generator-beata.iml" />
+>>>>>>> c84bbd80370212b53d0c5a1489a24c2780ae8ac5
     </modules>
   </component>
 </project>
