@@ -8,10 +8,22 @@ public class Report3 {
 
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
+	
+	private boolean checkEmployee(ArrayList<Task> dataModel, String year,String employee) {
+		
+		for(Task i: dataModel) {
+			if(i.getPerson().equals(employee)) {
+				return true;
+			}
+		}
+		System.out.println("Brak danych pracownika na rok " + year);
+		return false;
+	}
 
 	public Report3(ArrayList<Task> dataModel, String year, String employee) {
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println(employee + " | Szczegółowy wykaz pracy za rok " + year);
+		if(checkEmployee(dataModel, year, employee)) {
 		for (Task i : dataModel) {
 			if (i.getYear().equals(year)) {
 				
@@ -20,12 +32,13 @@ public class Report3 {
 				}
 			}
 		}
+		}
 		fillReport();
 		printReport();
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 	}
 
-	public void fillReport() {
+	private void fillReport() {
 		for (Task t : projectWorkers) {
 			String key = makeCompoundKey(t.getMonth(), t.getProject());
 			if (workingHours.containsKey(key)) {
@@ -39,7 +52,7 @@ public class Report3 {
 		}
 	}
 
-	public void printReport() {
+	private void printReport() {
 		double sum = 0;
 		int index = 1;
 		System.out.printf("%-10s %-20s %-20s %-10s\n", "Lp", "Miesiac","Projekt", "Godziny [h]");
@@ -56,7 +69,7 @@ public class Report3 {
 					"Pażdziernik","Listopad","Grudzień"};
 			String project = keyValues[1];
 
-			System.out.printf("%-10s %-20s %-20s %-10s\n", index, monthName[Integer.parseInt(month)], project, hours);
+			System.out.printf("%-10s %-20s %-20s %-10s\n", index, monthName[Integer.parseInt(month)-1], project, hours);
 
 			index++;
 		}
