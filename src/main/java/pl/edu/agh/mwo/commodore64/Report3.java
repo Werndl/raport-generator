@@ -39,7 +39,6 @@ public class Report3 {
 			fillReport();
 			printReport();
 		}
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 	}
 
 	private void fillReport() {

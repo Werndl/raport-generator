@@ -59,6 +59,7 @@ public class ReportsSelector {
                 SelectReport();
             }
             else {
+            	System.out.println("Koniec pracy");
                 System.exit(0);
             }
         }
@@ -75,7 +76,9 @@ public class ReportsSelector {
             switch (reportOption){
                 case 1:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report1 report1 = new Report1(PathCommander.getDataModel(), GetYearToReportGenerating());
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 2:
                     GeneratingReportInfo(reportOption);
@@ -83,25 +86,36 @@ public class ReportsSelector {
                     break;
                 case 3:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report3 report3 = new Report3(PathCommander.getDataModel(), GetYearToReportGenerating(), GetNameAndSurnameToReportGenerating());
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 4:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(4);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 5:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report5 report5 = new Report5(PathCommander.getDataModel(), GetProjectToReportGenerating());
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 6:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(6);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 7:
                     GeneratingReportInfo(reportOption);
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(7);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 0:
+                	System.out.println("Koniec pracy");
                     System.exit(0);
                 default:
                     System.out.println("Podana wartosc jest bledna, sprobuj ponownie.");
