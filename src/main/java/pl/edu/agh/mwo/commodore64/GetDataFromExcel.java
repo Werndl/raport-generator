@@ -53,8 +53,19 @@ public class GetDataFromExcel
 						{
 							DataFormatter dataFormatter = new DataFormatter();
 							String cellValue = dataFormatter.formatCellValue(c);
-							task.setMonth(cellValue.split("/")[0]);
-							task.setYear("20" + cellValue.split("/")[2]);
+							String month = cellValue.split("/")[0];
+							String year = "20" + cellValue.split("/")[2];
+							
+							if(pathCompatibile(path, year, month))
+							{
+								task.setMonth(month);
+								task.setYear(year);
+							}
+							else
+							{
+								System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") - data nie jest zgodna z układem katalogow!");
+								break;
+							}
 						}
 						else
 						{
@@ -104,6 +115,18 @@ public class GetDataFromExcel
 		&& (task.getPerson() != "" && task.getPerson() != null)
 		&& (task.getProject() != "" && task.getProject() != null)
 		&& (task.getYear() != "" && task.getYear() != null)) return true;
+		else return false;
+	}
+	
+	public boolean pathCompatibile(String path, String ExcelYear, String ExcelMonth)
+	{
+		String pathYear = path.split("/")[path.split("/").length - 3];
+		String pathMonth = path.split("/")[path.split("/").length - 2];
+		
+		if(pathYear.length() != 4 || pathMonth.length() != 2) return false;
+		if(pathMonth.charAt(0) == '0') pathMonth = pathMonth.substring(1);
+		
+		if(ExcelYear.equals(pathYear) && ExcelMonth.equals(pathMonth)) return true;
 		else return false;
 	}
 }
