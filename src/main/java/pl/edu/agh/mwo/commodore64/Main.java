@@ -22,7 +22,7 @@ public class Main
 			System.out.println("h " + t.getPerson());
 		}*/
 		
-		Report5 report = new Report5(PathCommander.getDataModel(), "Projekt2");
-		//Report1 report = new Report1(dataGetter.getDataModel(), "2018");
+		Report5 report5 = new Report5(PathCommander.getDataModel(), "Projekt2");
+		//Report1 report1 = new Report1(PathCommander.getDataModel(), "2018");
 	}
 }

@@ -18,7 +18,7 @@ public class Report1 {
 	
     public Report1(ArrayList<Task> tasks, String yearFilter){	
     for (Task i: tasks) {
-    	if(i.getYear() == yearFilter) {
+    	if(i.getYear().equals(yearFilter)) {
     		filtredDatas.add(i);
     	}   
     
@@ -43,15 +43,23 @@ public class Report1 {
     	
     }
 
-    private void printReport() {
-    	
-    	Collection toPrint = reportDatas.entrySet();
-    	Iterator element = toPrint.iterator();
-    	while(element.hasNext()) {System.out.println(element.next());}
-    	System.out.println("sss");
-    }
-    
-    
-	
-	
+    public void printReport()
+	{
+		double sum = 0;
+		int index = 1;
+		System.out.printf("%-30s %-30s %-10s\n", "Lp", "Pracownik", "Godziny [h]");
+		
+		for(Map.Entry<String, Double> entry : reportDatas.entrySet())
+		{
+			String person = entry.getKey();
+			Double hours = entry.getValue();
+			
+			System.out.printf("%-30s %-30s %-10s\n", index, person, hours);
+			
+			sum += hours;
+			index++;
+		}
+		
+		System.out.printf("%-61s %-10s", "Suma: ", sum);
+	}
 }

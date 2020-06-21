@@ -51,19 +51,19 @@ public class Report5
 	{
 		double sum = 0;
 		int index = 1;
-		System.out.printf("%-60s %-30s %-10s\n", "Lp", "Pracownik", "Godziny [h]");
+		System.out.printf("%-30s %-30s %-10s\n", "Lp", "Pracownik", "Godziny [h]");
 		
 		for(Map.Entry<String, Double> entry : workingHours.entrySet())
 		{
 			String person = entry.getKey();
 			Double hours = entry.getValue();
 			
-			System.out.printf("%-60s %-30s %-10s\n", index, person, hours);
+			System.out.printf("%-30s %-30s %-10s\n", index, person, hours);
 			
 			sum += hours;
 			index++;
 		}
 		
-		System.out.printf("%-60s %-40s", "Suma: ", sum);
+		System.out.printf("%-61s %-10s", "Suma: ", sum);
 	}
 }
