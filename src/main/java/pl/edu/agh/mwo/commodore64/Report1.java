@@ -20,13 +20,12 @@ public class Report1 {
     for (Task i: tasks) {
     	if(i.getYear() == yearFilter) {
     		filtredDatas.add(i);
-    	}
-    	fillReport();
-    	printReport();
-    }
-    
+    	}   
     
     }
+    fillReport();
+	printReport();
+}
     
     private void fillReport() {
     	
@@ -48,9 +47,8 @@ public class Report1 {
     	
     	Collection toPrint = reportDatas.entrySet();
     	Iterator element = toPrint.iterator();
-    	while(element.hasNext())
-    	System.out.println(element.next());
-    	
+    	while(element.hasNext()) {System.out.println(element.next());}
+    	System.out.println("sss");
     }
     
     
