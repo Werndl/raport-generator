@@ -16,7 +16,7 @@ public class Report1 {
 	
 	
 	
-    public Report1(ArrayList<Task> tasks, int yearFilter){	
+    public Report1(ArrayList<Task> tasks, String yearFilter){	
     for (Task i: tasks) {
     	if(i.getYear() == yearFilter) {
     		filtredDatas.add(i);
