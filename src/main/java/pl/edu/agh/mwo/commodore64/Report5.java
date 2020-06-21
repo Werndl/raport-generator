@@ -18,7 +18,6 @@ public class Report5
 				if(t.getProject().equals(project)) projectWorkers.add(t);
 			}
 		}
-		
 		fillReport();
 		printReport();
 	}

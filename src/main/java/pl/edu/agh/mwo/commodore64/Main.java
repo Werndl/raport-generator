@@ -11,7 +11,7 @@ public class Main
 //		ReportsSelector reportSelector = new ReportsSelector();
 //		reportSelector.SelectReport();
 
-		PathCommander.getPath("E:\\jnodz\\Documents\\IT\\PROJEKT\\dane");
+		PathCommander.getPath("C:\\Users\\Beata\\Desktop\\aaa\\reporter-dane");
 		
 		/*for(Task t : PathCommander.getDataModel())
 		{
@@ -22,11 +22,12 @@ public class Main
 			System.out.println("h " + t.getProject());
 			System.out.println("h " + t.getPerson());
 		}*/
-		Report3 report = new Report3(PathCommander.getDataModel(), "2018", "Damian Kowal");
+		//Report3 report = new Report3(PathCommander.getDataModel(), "2018", "Damian Kowal");
 		//Report5 report1 = new Report5(PathCommander.getDataModel(), "Projekt 2");
 		//Report1 report2 = new Report1(PathCommander.getDataModel(), "2018");
+		Report2 report1 = new Report2(PathCommander.getDataModel(), "2018");
 
-		Report3 report2 = new Report3(PathCommander.getDataModel(), "2018", "Kamil Kosa");
-		Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
+		//Report3 report2 = new Report3(PathCommander.getDataModel(), "2018", "Kamil Kosa");
+		//Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
 	}
 }
