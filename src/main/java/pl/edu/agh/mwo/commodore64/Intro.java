@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Intro {
 
-	private static String path;
+	private static String reportsPath;
 	public static String welcomePage() {
 
 		try {
@@ -16,11 +16,11 @@ public class Intro {
 			Scanner scan = new Scanner(System.in);
 
 			System.out.print("Prosze podac sciezke katalogu: ");
-			path = scan.next();
-			File file = new File(path);
-			if (file.exists() && path.contains(".xls")) {
+			reportsPath = scan.next();
+			File file = new File(reportsPath);
+			if (file.exists()) {
 				System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-				return path;
+				return reportsPath;
 			} else {
 				System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
 				welcomePage();
@@ -29,6 +29,6 @@ public class Intro {
 			System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
 			welcomePage();
 		}
-		return path;
+		return reportsPath;
 	}
 }

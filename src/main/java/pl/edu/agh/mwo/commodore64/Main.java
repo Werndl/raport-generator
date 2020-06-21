@@ -6,12 +6,13 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		/*String path = Intro.welcomePage();
-		ReportsSelector reportSelector = new ReportsSelector();
-		reportSelector.SelectReport();*/
+//		String reportsPath = Intro.welcomePage();
+//		PathCommander.getPath(reportsPath);
+//		ReportsSelector reportSelector = new ReportsSelector();
+//		reportSelector.SelectReport();
 
-		PathCommander.getPath("E:\\jnodz\\Documents\\IT\\PROJEKT\\dane");
-		
+//		PathCommander.getPath("E:\\jnodz\\Documents\\IT\\PROJEKT\\dane");
+
 		/*for(Task t : PathCommander.getDataModel())
 		{
 			System.out.println("-----------");
@@ -24,7 +25,7 @@ public class Main
 		Report3 report = new Report3(PathCommander.getDataModel(), "2018", "Damian Kowal");
 		Report5 report1 = new Report5(PathCommander.getDataModel(), "Projekt 2");
 		Report1 report2 = new Report1(PathCommander.getDataModel(), "2018");
-		
+
 		//TO FIX - issue with long name -???
 		//Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
 	}
