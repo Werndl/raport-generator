@@ -43,24 +43,40 @@ public class GetDataFromExcel
 				{
 					if(c.getCellType() == CellType.BLANK)
 					{
-						System.out.println("Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") jest pusta!");
+						System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") jest pusta!");
 						break;
 					}
 					
 					if(c.getColumnIndex() == 0)
 					{
-						DataFormatter dataFormatter = new DataFormatter();
-						String cellValue = dataFormatter.formatCellValue(c);
-						task.setMonth(cellValue.split("/")[0]);
-						task.setYear("20" + cellValue.split("/")[2]);
+						if(c.getCellType() == CellType.NUMERIC && DateUtil.isCellDateFormatted(c))
+						{
+							DataFormatter dataFormatter = new DataFormatter();
+							String cellValue = dataFormatter.formatCellValue(c);
+							task.setMonth(cellValue.split("/")[0]);
+							task.setYear("20" + cellValue.split("/")[2]);
+						}
+						else
+						{
+							System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
+							break;
+						}
 					}
 					
 					if(c.getColumnIndex() == 1) continue;
 
 					if(c.getColumnIndex() == 2)
 					{
-						c.setCellType(CellType.STRING);
-						task.setHours(c.getStringCellValue());
+						if(c.getCellType() == CellType.NUMERIC && !DateUtil.isCellDateFormatted(c))
+						{
+							c.setCellType(CellType.STRING);
+							task.setHours(c.getStringCellValue());
+						}
+						else
+						{
+							System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
+							break;
+						}
 					}
 					
 					task.setProject(sh.getSheetName());
