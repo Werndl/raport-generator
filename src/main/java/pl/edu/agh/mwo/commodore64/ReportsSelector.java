@@ -5,11 +5,10 @@ import java.util.Scanner;
 
 public class ReportsSelector {
 
-    Scanner scan = new Scanner(System.in);
     private int reportOption;
 
     public void PrintReportsWelcomeMessage(){
-        System.out.println("Wybierz z ponizszych opcji raport ktory chcesz wygenerowac:");
+        System.out.println("\nWybierz z ponizszych opcji raport ktory chcesz wygenerowac:");
         System.out.println("Raport 1: Alfabetyczna lista pracowników za dany rok. WPISZ: 1");
         System.out.println("Raport 2: Alfabetyczna lista projektów za dany rok. WPISZ: 2");
         System.out.println("Raport 3: Szczegółowy wykaz pracy danego pracownika. WPISZ: 3");
@@ -23,8 +22,27 @@ public class ReportsSelector {
 
     public int GetReportOptionToGenerateFromUser(){
         System.out.print("\nWpisz wybrana opcje: ");
+        Scanner scan = new Scanner(System.in);
         reportOption = scan.nextInt();
         return reportOption;
+    }
+
+    public String GetYearToReportGenerating(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj rok dla ktorego chcesz wygenerowac raport: ");
+        return scan.next();
+    }
+
+    public String GetNameAndSurnameToReportGenerating(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj imie i nazwisko osoby dla ktorej chcesz wygenerowac raport: ");
+        return scan.nextLine();
+    }
+
+    public String GetProjectToReportGenerating(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj projekt ktorego chcesz wygenerowac raport: ");
+        return scan.next();
     }
 
     public void GeneratingReportInfo(int reportOption){
@@ -32,13 +50,21 @@ public class ReportsSelector {
     }
 
     public void CheckIfUserWantToGenerateAgain(){
-        System.out.print("\nCzy chcesz wygenerowac kolejny raport? (WPISZ: 1 jesli TAK, wpisz 0 jesli NIE): ");
-        int generationAgainStatus = scan.nextInt();
-        if (generationAgainStatus == 1){
-            SelectReport();
+        try {
+            System.out.print("\nCzy chcesz wygenerowac kolejny raport? (WPISZ: 1 jesli TAK, wpisz 0 jesli NIE): ");
+            Scanner scan = new Scanner(System.in);
+
+            int generationAgainStatus = scan.nextInt();
+            if (generationAgainStatus == 1){
+                SelectReport();
+            }
+            else {
+                System.exit(0);
+            }
         }
-        else {
-            System.exit(0);
+        catch (InputMismatchException err){
+            System.out.println("Podana wartosc jest bledna, sprobuj ponownie.");
+            CheckIfUserWantToGenerateAgain();
         }
     }
 
@@ -49,7 +75,7 @@ public class ReportsSelector {
             switch (reportOption){
                 case 1:
                     GeneratingReportInfo(reportOption);
-                    System.out.print(1);
+                    Report1 report1 = new Report1(PathCommander.getDataModel(), GetYearToReportGenerating());
                     break;
                 case 2:
                     GeneratingReportInfo(reportOption);
@@ -57,7 +83,7 @@ public class ReportsSelector {
                     break;
                 case 3:
                     GeneratingReportInfo(reportOption);
-                    System.out.print(3);
+                    Report3 report3 = new Report3(PathCommander.getDataModel(), GetYearToReportGenerating(), GetNameAndSurnameToReportGenerating());
                     break;
                 case 4:
                     GeneratingReportInfo(reportOption);
@@ -65,7 +91,7 @@ public class ReportsSelector {
                     break;
                 case 5:
                     GeneratingReportInfo(reportOption);
-                    System.out.print(5);
+                    Report5 report5 = new Report5(PathCommander.getDataModel(), GetProjectToReportGenerating());
                     break;
                 case 6:
                     GeneratingReportInfo(reportOption);
@@ -79,6 +105,7 @@ public class ReportsSelector {
                     System.exit(0);
                 default:
                     System.out.println("Podana wartosc jest bledna, sprobuj ponownie.");
+                    SelectReport();
             }
             CheckIfUserWantToGenerateAgain();
         }

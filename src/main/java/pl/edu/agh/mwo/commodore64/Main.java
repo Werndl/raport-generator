@@ -6,9 +6,10 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		/*String path = Intro.welcomePage();
-		ReportsSelector reportSelector = new ReportsSelector();
-		reportSelector.SelectReport();*/
+//		String reportsPath = Intro.welcomePage();
+//		PathCommander.getPath(reportsPath);
+//		ReportsSelector reportSelector = new ReportsSelector();
+//		reportSelector.SelectReport();
 
 		PathCommander.getPath("E:\\jnodz\\Documents\\IT\\PROJEKT\\dane");
 		
@@ -24,7 +25,7 @@ public class Main
 		Report3 report = new Report3(PathCommander.getDataModel(), "2018", "Damian Kowal");
 		//Report5 report1 = new Report5(PathCommander.getDataModel(), "Projekt 2");
 		//Report1 report2 = new Report1(PathCommander.getDataModel(), "2018");
-		
+
 		Report3 report2 = new Report3(PathCommander.getDataModel(), "2018", "Kamil Kosa");
 		Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
 	}
