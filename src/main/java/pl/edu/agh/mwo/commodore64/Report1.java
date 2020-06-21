@@ -28,18 +28,23 @@ public class Report1 {
     
     }
     
-    public void fillReport() {
+    private void fillReport() {
     	
     	for (Task i: filtredDatas) {
-    		for (String x: reportDatas) {
-    			
+    		if (reportDatas.containsKey(i.getPerson()) == true)
+    		{
+    			temp = reportDatas.get(i.getPerson()) + i.getHours();
+    			reportDatas.replace(i.getPerson(), temp);
+    			}
+    		else {
+    			reportDatas.put(i.getPerson(),i.getHours());
     		}
     	}
     	
     	
     }
 
-    public void printReport() {
+    private void printReport() {
     	
     	Collection toPrint = reportDatas.entrySet();
     	Iterator element = toPrint.iterator();
