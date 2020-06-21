@@ -25,10 +25,12 @@ public class Report3 {
 		System.out.println(employee + " | Szczegółowy wykaz pracy za rok " + year);
 		if(checkEmployee(dataModel, year, employee)) {
 		for (Task i : dataModel) {
+			System.out.println(i.getPerson() + " - " + i.getMonth() + " - " + i.getProject());
 			if (i.getYear().equals(year)) {
-				
+				//System.out.println(i.getPerson() + " - " + i.getMonth() + " - " + i.getProject());
 				if (i.getPerson().contains(employee)) {
 					projectWorkers.add(i);
+					//System.out.println(i.getPerson() + " - " + i.getMonth() + " - " + i.getProject());
 				}
 			}
 		}

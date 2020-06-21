@@ -26,6 +26,6 @@ public class Main
 		Report1 report2 = new Report1(PathCommander.getDataModel(), "2018");
 		
 		//TO FIX - issue with long name -???
-		Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
+		Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara ");
 	}
 }
