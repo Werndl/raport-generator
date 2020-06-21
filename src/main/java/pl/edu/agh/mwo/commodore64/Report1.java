@@ -16,7 +16,7 @@ public class Report1 {
 	
 	
 	
-    public Report1(ArrayList<Task> tasks, int yearFilter){	
+    public Report1(ArrayList<Task> tasks, String yearFilter){	
     for (Task i: tasks) {
     	if(i.getYear() == yearFilter) {
     		filtredDatas.add(i);
@@ -33,11 +33,11 @@ public class Report1 {
     	for (Task i: filtredDatas) {
     		if (reportDatas.containsKey(i.getPerson()) == true)
     		{
-    			temp = reportDatas.get(i.getPerson()) + i.getHours();
+    			temp = reportDatas.get(i.getPerson()) + Double.parseDouble(i.getHours());
     			reportDatas.replace(i.getPerson(), temp);
     			}
     		else {
-    			reportDatas.put(i.getPerson(),i.getHours());
+    			reportDatas.put(i.getPerson(),Double.parseDouble(i.getHours()));
     		}
     	}
     	
