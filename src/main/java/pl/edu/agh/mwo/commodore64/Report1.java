@@ -42,7 +42,7 @@ public class Report1 {
     public void printReport() {
     	
     	Collection toPrint = reportDatas.entrySet();
-    	Iterator element = entrySet.iterator();
+    	Iterator element = toPrint.iterator();
     	while(element.hasNext())
     	System.out.println(element.next());
     	
