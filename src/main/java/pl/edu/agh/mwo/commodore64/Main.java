@@ -23,8 +23,8 @@ public class Main
 			System.out.println("h " + t.getPerson());
 		}*/
 
-		//Report5 report1 = new Report5(PathCommander.getDataModel(), "Projekt 2");
+		Report5 report1 = new Report5(PathCommander.getDataModel(), "Projekt 2");
 		//Report1 report2 = new Report1(PathCommander.getDataModel(), "2018");
-		Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
+		//Report3 report3 = new Report3(PathCommander.getDataModel(), "2018", "Katarzyna Mara");
 	}
 }
