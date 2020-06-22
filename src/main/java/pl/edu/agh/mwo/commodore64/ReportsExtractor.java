@@ -30,6 +30,7 @@ public class ReportsExtractor {
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+        headerCellStyle.setIndention((short) 30);
 
         // Create a Row
         Row headerRow = sheet.createRow(0);
@@ -57,7 +58,6 @@ public class ReportsExtractor {
         workbook.write(fileOut);
         fileOut.close();
 
-        System.out.println("Wygenerowany raport jest dostepny w wybranej lokalizacji!");
         // Closing the workbook
         workbook.close();
 	}
