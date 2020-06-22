@@ -1,42 +1,32 @@
 package pl.edu.agh.mwo.commodore64;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+// alfabetyczna lista projektów za dany rok
+// sumaryczna liczba godzin w danym roku
+// tabelka: nazwa projektu, liczba godzin
 
 public class Report2 {
 
-    private TreeMap<String, Double> reportDatas = new TreeMap<String, Double>();
-    private ArrayList<Task> filtredDatas = new ArrayList<Task>();
-    private double temp;
+    private ArrayList<Task> project = new ArrayList<>();
+    private TreeMap<String, Double> workingHours = new TreeMap<>();
 
-    public Report2(ArrayList<Task> tasks, String yearFilter){
-        for (Task i: tasks) {
-            if(i.getYear() == yearFilter) {
-                filtredDatas.add(i);
-            }
+    public Report2(ArrayList<Task> dataModel, String project, String year)  {
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(project + " | liczba godzin w roku " + year);
         }
-        fillReport();
-        printReport();
-    }
 
     private void fillReport() {
+        for (Task t : project) {
+            String key = makeCompoundKey(t.getMonth(), t.getProject());
+            if (workingHours.containsKey(key)) {
 
-        for (Task i: filtredDatas) {
-            if (reportDatas.containsKey(i.getProject()) == true)
-            {
-                temp = reportDatas.get(i.getProject()) + Double.parseDouble(i.getHours());
-                reportDatas.replace(i.getProject(), temp);
-            }
-            else {
-                reportDatas.put(i.getProject(),Double.parseDouble(i.getHours()));
+                double dayHours = workingHours.get(key) + Double.parseDouble(t.getHours());
+                workingHours.replace(key, dayHours);
+            } else {
+                workingHours.put(key, Double.parseDouble(t.getHours()));
             }
         }
-    }
-
-    private void printReport() {
-
-        Collection toPrint = reportDatas.entrySet();
-        Iterator element = toPrint.iterator();
-        while(element.hasNext()) {System.out.println(element.next());}
-        System.out.println("raport 2");
     }
 }

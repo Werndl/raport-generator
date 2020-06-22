@@ -80,6 +80,7 @@ public class ReportsSelector {
                 case 2:
                     GeneratingReportInfo(reportOption);
                     System.out.print(2);
+//                    Report2 report2 = new Report2(PathCommander.getDataModel(), GetYearToReportGenerating(), GetProjectToReportGenerating());
                     break;
                 case 3:
                     GeneratingReportInfo(reportOption);

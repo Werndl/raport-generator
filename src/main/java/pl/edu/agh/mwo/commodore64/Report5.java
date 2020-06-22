@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+// liczba godzin wypracowanych przez poszczególnych pracowników w danym projekcie
+// tabelka: nazwa projektu, lp, imie i nazwisko, liczba godzin
+
 public class Report5
 {
 	private ArrayList<Task> projectWorkers = new ArrayList<>();

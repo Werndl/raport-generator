@@ -5,6 +5,10 @@ import java.util.TreeMap;
 import java.util.Collection;
 import java.util.Iterator;
 
+// alfabetyczna lista pracowników za dany rok
+// sumaryczna liczba godzin za danych rok
+// tabelka: imie i nazwisko, liczba godzin
+
 public class Report1 {
 
 	private TreeMap<String, Double> reportDatas = new TreeMap<String, Double>();
@@ -41,6 +45,5 @@ public class Report1 {
     	Collection toPrint = reportDatas.entrySet();
     	Iterator element = toPrint.iterator();
     	while(element.hasNext()) {System.out.println(element.next());}
-    	System.out.println("sss");
     }
 }

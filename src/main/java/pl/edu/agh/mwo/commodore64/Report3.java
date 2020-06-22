@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+// szczegółowy wykaz pracy danego pracownika za dany rok
+// tabelka: lp, miesiąc, projekt, liczba godzin
+
 public class Report3 {
 
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
