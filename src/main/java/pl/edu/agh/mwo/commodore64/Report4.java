@@ -8,7 +8,14 @@ import java.util.TreeMap;
 import java.util.Collection;
 import java.util.Iterator;
 
+
+
 public class Report4 {
+	
+	private class Person{
+		
+	}
+	
 	
 	private ArrayList<Task> filtredDatas = new ArrayList<Task>();
 	
@@ -29,6 +36,9 @@ public class Report4 {
 	}
 	
 	private void printReport() {
+		
+	}
+	
 		
 	}
 	
