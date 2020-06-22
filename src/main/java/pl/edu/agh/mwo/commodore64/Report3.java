@@ -77,7 +77,7 @@ public class Report3 {
 
 	}
 
-	String makeCompoundKey(String month, String project) {
+	private String makeCompoundKey(String month, String project) {
 		if (month.length() > 1) {
 			return month + ";" + project;
 		}

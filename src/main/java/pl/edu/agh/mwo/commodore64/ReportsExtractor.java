@@ -42,21 +42,7 @@ public class ReportsExtractor {
         }
         
 
-        loadData(data,workbook, sheet, columns.length);
-       
-     // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream(fileName);
-        workbook.write(fileOut);
-        fileOut.close();
-
-        System.out.println("Wygenerowano raport");
-        // Closing the workbook
-        workbook.close();
-	}
-	
-	private static void loadData( ArrayList<String[]>data, Workbook workbook,Sheet sheet, int colNum)
-	{
-        // Create Other rows and cells with employees data
+     // Create Other rows and cells with employees data
         int rowNum = 1;
         for(String[] i: data) {
             Row row = sheet.createRow(rowNum++);
@@ -65,18 +51,37 @@ public class ReportsExtractor {
             	row.createCell(k).setCellValue(i.toString().valueOf(k));
             }    
         }
+       
+     // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream(fileName);
+        workbook.write(fileOut);
+        fileOut.close();
+
+        System.out.println("Wygenerowany raport jest dostepny w wybranej lokalizacji!");
+        // Closing the workbook
+        workbook.close();
 	}
+	
 		private static String getFileName() {
 			
 			Scanner scan = new Scanner(System.in);
-
+			
+			String path = getFilePath();
+			
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd-HHmm");  
-			   LocalDateTime now = LocalDateTime.now();  
-			System.out.print("Prosze podac nazwe raportu: ");
-			return fileName = scan.next() + "-" + dtf.format(now) + ".xlsx";
+			LocalDateTime now = LocalDateTime.now();  
+			System.out.print("Prosze podac nazwe raportu bez uzywania spacji: ");
+			return fileName = path + "/" + scan.next() + "-" + dtf.format(now) + ".xlsx";
 		}
 
-        
-    
+		private static String getFilePath() {
+			Scanner scan = new Scanner(System.in);
 
+			System.out.print("Prosze podac sciezke do zapisania pliku:");
+			fileName = scan.next();
+			if (fileName.contains("\\")) {
+				fileName = fileName.replace("\\", "/");
+			}
+			return fileName;
+		}
 }
