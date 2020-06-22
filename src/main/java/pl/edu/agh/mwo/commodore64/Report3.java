@@ -13,8 +13,8 @@ public class Report3 {
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
 	
 	//for Excel print
-	private String[] columns = {"Lp", "Miesiac", "Projekt", "Godziny [h]"};
-	private ArrayList<String[]> data = new ArrayList<>();
+	private static String[] columns = {"Lp", "Miesiac", "Projekt", "Godziny [h]"};
+	private static ArrayList<String[]> data = new ArrayList<>();
 
 	private boolean checkEmployee(ArrayList<Task> dataModel, String year, String employee) {
 
@@ -61,9 +61,9 @@ public class Report3 {
 	}
 
 	private void printReport() {
-		double sum = 0;
+
 		int index = 1;
-		System.out.printf("%-10s %-20s %-20s %-10s\n", columns);
+		System.out.printf("%-5s %-15s %-20s %-10s\n", columns);
 
 		for (Map.Entry<String, Double> entry : workingHours.entrySet()) {
 			String key = entry.getKey();
@@ -76,7 +76,7 @@ public class Report3 {
 			String project = keyValues[1];
 
 			String[] values = {String.valueOf(index),monthName[Integer.parseInt(month) - 1], project, hours.toString()};
-			System.out.printf("%-10s %-20s %-20s %-10s\n", values);
+			System.out.printf("%-5s %-15s %-20s %-10s\n", values);
 			
 			data = ExcelPrinter.createStringTemplate(values);
 
@@ -92,7 +92,7 @@ public class Report3 {
 		return "0" + month + ";" + project;
 	}
 
-	public String[] getColumns() {
+	public static String[] getColumns() {
 		return columns;
 	}
 
@@ -100,7 +100,7 @@ public class Report3 {
 		this.columns = columns;
 	}
 
-	public ArrayList<String[]> getData() {
+	public static ArrayList<String[]> getData() {
 		return data;
 	}
 

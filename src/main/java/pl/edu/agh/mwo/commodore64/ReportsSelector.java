@@ -79,6 +79,8 @@ public class ReportsSelector {
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report1 report1 = new Report1(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 2:
                     GeneratingReportInfo(reportOption);
@@ -89,17 +91,23 @@ public class ReportsSelector {
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report3 report3 = new Report3(PathCommander.getDataModel(), GetYearToReportGenerating(), GetNameAndSurnameToReportGenerating());
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 4:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(4);
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 5:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report5 report5 = new Report5(PathCommander.getDataModel(), GetProjectToReportGenerating());
+                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 6:

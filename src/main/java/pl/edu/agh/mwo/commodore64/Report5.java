@@ -9,6 +9,10 @@ public class Report5
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
 	
+	//for Excel print
+		private static String[] columns = {"Lp", "Pracownik", "Godziny [h]"};
+		private static ArrayList<String[]> data = new ArrayList<>();
+	
 	public Report5(ArrayList<Task> dataModel, String project)
 	{
 		if(projectExistanceCheck(dataModel, project))
@@ -51,19 +55,40 @@ public class Report5
 	{
 		double sum = 0;
 		int index = 1;
-		System.out.printf("%-30s %-30s %-10s\n", "Lp", "Pracownik", "Godziny [h]");
+		System.out.printf("%-30s %-30s %-10s\n", columns);
 		
 		for(Map.Entry<String, Double> entry : workingHours.entrySet())
 		{
 			String person = entry.getKey();
 			Double hours = entry.getValue();
 			
-			System.out.printf("%-30s %-30s %-10s\n", index, person, hours);
+			String[] values = {String.valueOf(index), person, hours.toString()};
+			System.out.printf("%-30s %-30s %-10s\n", values);
+			
+			data = ExcelPrinter.createStringTemplate(values);
 			
 			sum += hours;
 			index++;
 		}
 		
 		System.out.printf("%-61s %-10s", "Suma: ", sum);
+		String[] sumFinal = {"Suma:","",String.valueOf(sum)};
+		data = ExcelPrinter.createStringTemplate(sumFinal);
+	}
+
+	public static String[] getColumns() {
+		return columns;
+	}
+
+	public void setColumns(String[] columns) {
+		this.columns = columns;
+	}
+
+	public static ArrayList<String[]> getData() {
+		return data;
+	}
+
+	public void setData(ArrayList<String[]> data) {
+		this.data = data;
 	}
 }

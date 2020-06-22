@@ -14,7 +14,9 @@ public class Report1 {
 	private ArrayList<Task> filtredDatas = new ArrayList<Task>();
 	private double temp;
 	
-	
+	//for Excel print
+		private static String[] columns = {"Lp", "Pracownik", "Godziny [h]"};
+		private static ArrayList<String[]> data = new ArrayList<>();
 	
     public Report1(ArrayList<Task> tasks, String yearFilter){	
     for (Task i: tasks) {
@@ -47,19 +49,39 @@ public class Report1 {
 	{
 		double sum = 0;
 		int index = 1;
-		System.out.printf("%-30s %-30s %-10s\n", "Lp", "Pracownik", "Godziny [h]");
+		System.out.printf("%-30s %-30s %-10s\n", columns);
 		
 		for(Map.Entry<String, Double> entry : reportDatas.entrySet())
 		{
 			String person = entry.getKey();
 			Double hours = entry.getValue();
 			
-			System.out.printf("%-30s %-30s %-10s\n", index, person, hours);
+			String[] values = {String.valueOf(index), person, hours.toString()};
+			System.out.printf("%-30s %-30s %-10s\n", values);
 			
+			data = ExcelPrinter.createStringTemplate(values);
 			sum += hours;
 			index++;
 		}
 		
 		System.out.printf("%-61s %-10s", "Suma: ", sum);
+		String[] sumFinal = {"Suma:","",String.valueOf(sum)};
+		data = ExcelPrinter.createStringTemplate(sumFinal);
+	}
+
+	public static String[] getColumns() {
+		return columns;
+	}
+
+	public void setColumns(String[] columns) {
+		this.columns = columns;
+	}
+
+	public static ArrayList<String[]> getData() {
+		return data;
+	}
+
+	public void setData(ArrayList<String[]> data) {
+		this.data = data;
 	}
 }
