@@ -11,18 +11,17 @@ public class Main
 	{
 		String reportsPath = Intro.welcomePage();
 		PathCommander.getPath(reportsPath);
-		for(Task t : PathCommander.getDataModel())
-		{
-			
-			System.out.println("h - " + t.getHours() + " - m - " + t.getMonth() + " - y - " + t.getYear() + 
-					" - h - " + t.getProject() + " - p - " + t.getPerson());
-		}
-
-		ReportsSelector reportSelector = new ReportsSelector();
-		reportSelector.SelectReport();
-
-		//PathCommander.getPath("E:\\jnodz\\Documents\\IT\\PROJEKT\\dane");
 		
-		
+		/*
+		 * //for checks for(Task t : PathCommander.getDataModel()) {
+		 * 
+		 * System.out.println("h - " + t.getHours() + " - m - " + t.getMonth() +
+		 * " - y - " + t.getYear() + " - h - " + t.getProject() + " - p - " +
+		 * t.getPerson()); }
+		 */
+		  
+		  ReportsSelector reportSelector = new ReportsSelector();
+		  reportSelector.SelectReport();
+		 
 	}
 }

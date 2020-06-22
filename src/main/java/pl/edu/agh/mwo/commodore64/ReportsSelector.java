@@ -42,7 +42,7 @@ public class ReportsSelector {
     public String GetProjectToReportGenerating(){
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj projekt ktorego chcesz wygenerowac raport: ");
-        return scan.next();
+        return scan.nextLine();
     }
 
     public void GeneratingReportInfo(int reportOption){

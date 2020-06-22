@@ -7,12 +7,17 @@ import java.util.Scanner;
 public class Intro {
 
 	private static String reportsPath;
+
 	public static String welcomePage() {
 
-		try {
-			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("Witamy w programie raportow pracowniczych!\n");
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("Witamy w programie raportow pracowniczych!\n");
 
+		return getPath();
+	}
+
+	private static String getPath() {
+		try {
 			Scanner scan = new Scanner(System.in);
 
 			System.out.print("Prosze podac sciezke katalogu: ");
@@ -23,11 +28,11 @@ public class Intro {
 				return reportsPath;
 			} else {
 				System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
-				welcomePage();
+				getPath();
 			}
 		} catch (NoSuchElementException err) {
 			System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
-			welcomePage();
+			getPath();
 		}
 		return reportsPath;
 	}
