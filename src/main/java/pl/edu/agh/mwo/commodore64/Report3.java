@@ -1,13 +1,20 @@
 package pl.edu.agh.mwo.commodore64;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.apache.poi.hssf.extractor.ExcelExtractor;
 
 public class Report3 {
 
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
+	
+	//for Excel print
+	private String[] columns = {"Lp", "Miesiac", "Projekt", "Godziny [h]"};
+	private ArrayList<String[]> data = new ArrayList<>();
 
 	private boolean checkEmployee(ArrayList<Task> dataModel, String year, String employee) {
 
@@ -34,7 +41,6 @@ public class Report3 {
 						projectWorkers.add(i);
 					}
 				}
-
 			}
 			fillReport();
 			printReport();
@@ -57,7 +63,7 @@ public class Report3 {
 	private void printReport() {
 		double sum = 0;
 		int index = 1;
-		System.out.printf("%-10s %-20s %-20s %-10s\n", "Lp", "Miesiac", "Projekt", "Godziny [h]");
+		System.out.printf("%-10s %-20s %-20s %-10s\n", columns);
 
 		for (Map.Entry<String, Double> entry : workingHours.entrySet()) {
 			String key = entry.getKey();
@@ -69,8 +75,10 @@ public class Report3 {
 					"Wrzesień", "Pażdziernik", "Listopad", "Grudzień" };
 			String project = keyValues[1];
 
-			System.out.printf("%-10s %-20s %-20s %-10s\n", index, monthName[Integer.parseInt(month) - 1], project,
-					hours);
+			String[] values = {String.valueOf(index),monthName[Integer.parseInt(month) - 1], project, hours.toString()};
+			System.out.printf("%-10s %-20s %-20s %-10s\n", values);
+			
+			data = ExcelPrinter.createStringTemplate(values);
 
 			index++;
 		}
@@ -83,4 +91,21 @@ public class Report3 {
 		}
 		return "0" + month + ";" + project;
 	}
+
+	public String[] getColumns() {
+		return columns;
+	}
+
+	public void setColumns(String[] columns) {
+		this.columns = columns;
+	}
+
+	public ArrayList<String[]> getData() {
+		return data;
+	}
+
+	public void setData(ArrayList<String[]> data) {
+		this.data = data;
+	}
+
 }

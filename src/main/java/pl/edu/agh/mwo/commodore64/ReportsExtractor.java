@@ -20,7 +20,7 @@ public class ReportsExtractor {
         getFileName();
        
         // Create a Sheet
-        Sheet sheet = workbook.createSheet("Employee");
+        Sheet sheet = workbook.createSheet("Report");
 
         // Create a Font for styling header cells
         Font headerFont = workbook.createFont();
@@ -48,7 +48,7 @@ public class ReportsExtractor {
             Row row = sheet.createRow(rowNum++);
 
             for (int k = 0; k<i.length; k++) {
-            	row.createCell(k).setCellValue(i.toString().valueOf(k));
+            	row.createCell(k).setCellValue(i[k]);
             }    
         }
        
@@ -68,7 +68,7 @@ public class ReportsExtractor {
 			
 			String path = getFilePath();
 			
-			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd-HHmm");  
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd-HHmm");  
 			LocalDateTime now = LocalDateTime.now();  
 			System.out.print("Prosze podac nazwe raportu bez uzywania spacji: ");
 			return fileName = path + "/" + scan.next() + "-" + dtf.format(now) + ".xlsx";
