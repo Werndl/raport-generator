@@ -9,9 +9,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		String reportsPath = Intro.welcomePage();
-		PathCommander.getPath(reportsPath);
-		
+		Intro.app();
 		/*
 		 * //for checks for(Task t : PathCommander.getDataModel()) {
 		 * 
@@ -19,9 +17,6 @@ public class Main
 		 * " - y - " + t.getYear() + " - h - " + t.getProject() + " - p - " +
 		 * t.getPerson()); }
 		 */
-		  
-		  ReportsSelector reportSelector = new ReportsSelector();
-		  reportSelector.SelectReport();
 		 
 	}
 }
