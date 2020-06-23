@@ -8,6 +8,10 @@ public class Report3 {
 
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
+	
+	//for Excel print
+	private static String[] columns = {"Lp", "Miesiac", "Projekt", "Godziny [h]"};
+	private static ArrayList<String[]> data = new ArrayList<>();
 
 	private boolean checkEmployee(ArrayList<Task> dataModel, String year, String employee) {
 
@@ -34,12 +38,10 @@ public class Report3 {
 						projectWorkers.add(i);
 					}
 				}
-
 			}
 			fillReport();
 			printReport();
 		}
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 	}
 
 	private void fillReport() {
@@ -56,9 +58,9 @@ public class Report3 {
 	}
 
 	private void printReport() {
-		double sum = 0;
+
 		int index = 1;
-		System.out.printf("%-10s %-20s %-20s %-10s\n", "Lp", "Miesiac", "Projekt", "Godziny [h]");
+		System.out.printf("%-5s %-15s %-20s %-10s\n", columns);
 
 		for (Map.Entry<String, Double> entry : workingHours.entrySet()) {
 			String key = entry.getKey();
@@ -70,18 +72,37 @@ public class Report3 {
 					"Wrzesień", "Pażdziernik", "Listopad", "Grudzień" };
 			String project = keyValues[1];
 
-			System.out.printf("%-10s %-20s %-20s %-10s\n", index, monthName[Integer.parseInt(month) - 1], project,
-					hours);
+			String[] values = {String.valueOf(index),monthName[Integer.parseInt(month) - 1], project, hours.toString()};
+			System.out.printf("%-5s %-15s %-20s %-10s\n", values);
+			
+			data = ExcelPrinter.createStringTemplate(values);
 
 			index++;
 		}
 
 	}
 
-	String makeCompoundKey(String month, String project) {
+	private String makeCompoundKey(String month, String project) {
 		if (month.length() > 1) {
 			return month + ";" + project;
 		}
 		return "0" + month + ";" + project;
 	}
+
+	public static String[] getColumns() {
+		return columns;
+	}
+
+	public void setColumns(String[] columns) {
+		this.columns = columns;
+	}
+
+	public static ArrayList<String[]> getData() {
+		return data;
+	}
+
+	public void setData(ArrayList<String[]> data) {
+		this.data = data;
+	}
+
 }

@@ -16,7 +16,7 @@ public class PathCommander {
 			path = path.replace("\\", "/");
 		}
  		for (File file : listOfFiles) {
-			if(!file.isDirectory() && file.getName().contains(".xls")) {
+			if(!file.isDirectory() && file.getName().endsWith(".xls")) {
 				System.out.println("Wczytano: " + path + "/" + file.getName());
 				dataGetter.initializePopulation(path + "/" + file.getName());
 			}
