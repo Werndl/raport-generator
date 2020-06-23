@@ -16,7 +16,12 @@ public class Report4 {
 	
 	private class PersonProjects{
 		
-		public String person = "";
+		public String person;
+		
+		public PersonProjects(String person) {
+			this.person = person;
+		}
+		
 		public HashMap<String,Double> projects = new HashMap<String,Double>();
 		public Double sum = 0.0;
 		
@@ -66,9 +71,13 @@ public class Report4 {
 					}
 					
 				}
+				else {
+					personsProjects.add(new PersonProjects(t.getPerson()));
+					
+				
 			}
 		}
-		
+		}
 		
 		
 	}
