@@ -1,15 +1,16 @@
 package pl.edu.agh.mwo.commodore64;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.TreeSet;
+
+
 
 public class Report1 {
-
+	
+	TreeSet<String> projects = new TreeSet<String>();
+	
 	private TreeMap<String, Double> reportDatas = new TreeMap<String, Double>();
 	private ArrayList<Task> filtredDatas = new ArrayList<Task>();
 	private double temp;

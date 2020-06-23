@@ -16,24 +16,27 @@ public class Report4 {
 	
 	private class PersonProjects{
 		
-		public String personName = "";
+		public String person = "";
 		public HashMap<String,Double> projects = new HashMap<String,Double>();
+		public Double sum = 0.0;
 		
 	}
+	private Double temp = 0.0;
 	
 	private TreeSet<String> allProjects = new TreeSet<String>();
 	
 	private ArrayList<PersonProjects> personsProjects = new ArrayList<PersonProjects>();
 	
-	private ArrayList<Task> filtredDatas = new ArrayList<Task>();
+	private ArrayList<Task> filteredDatas = new ArrayList<Task>();
 	
 	public Report4(ArrayList<Task> tasks, String yearFilter){	
 	    for (Task i: tasks) {
 	    	if(i.getYear().equals(yearFilter)) {
-	    		filtredDatas.add(i);
+	    		filteredDatas.add(i);
 	    	}   
 	    
 	    }
+	    
 	    fillReport();
 		printReport();
 	}
@@ -44,6 +47,29 @@ public class Report4 {
 	}
 	
 	private void printReport() {
+		
+	}
+	
+	private void makePersonProjects(ArrayList<Task> filtredDatas) { 
+		// 1. Make objects from Task filtered by year
+		// 2. Fill ArrayList with all those objects
+		for (Task t: filteredDatas) {
+			for (PersonProjects p: personsProjects) {
+				if(t.getPerson().equals(p.person)) {
+					if(p.projects.containsKey(t.getProject())) {
+						temp = p.projects.get(t.getProject());
+						p.projects.replace(t.getProject(), temp + Double.parseDouble(t.getHours()));
+					}
+					else {
+						p.projects.put(t.getProject(),Double.parseDouble(t.getHours()));
+						
+					}
+					
+				}
+			}
+		}
+		
+		
 		
 	}
 	
