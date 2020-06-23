@@ -69,8 +69,8 @@ public class ReportsExtractor {
 			
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd-HHmm");  
 			LocalDateTime now = LocalDateTime.now();  
-			System.out.print("Prosze podac nazwe raportu bez uzywania spacji: ");
-			return fileName = path + "/" + scan.next() + "-" + dtf.format(now) + ".xlsx";
+			System.out.print("Prosze podac nazwe raportu: ");
+			return fileName = path + "/" + scan.nextLine() + "-" + dtf.format(now) + ".xlsx";
 		}
 
 		private static String getFilePath() {

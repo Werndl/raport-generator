@@ -51,7 +51,7 @@ public class ReportsSelector {
 
     public void CheckIfUserWantToGenerateAgain(){
         try {
-            System.out.print("\nCzy chcesz wygenerowac kolejny raport?");
+            System.out.println("\nCzy chcesz wygenerowac kolejny raport?");
             System.out.println("WPISZ: 1 jesli TAK, wcisnij inny klawisz jesli NIE: ");
             Scanner scan = new Scanner(System.in);
 
