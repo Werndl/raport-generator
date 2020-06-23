@@ -1,11 +1,8 @@
 package pl.edu.agh.mwo.commodore64;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
-
-import org.apache.poi.hssf.extractor.ExcelExtractor;
 
 public class Report3 {
 

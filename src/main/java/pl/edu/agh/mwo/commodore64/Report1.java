@@ -1,12 +1,8 @@
 package pl.edu.agh.mwo.commodore64;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.Collection;
-import java.util.Iterator;
 
 public class Report1 {
 
@@ -49,13 +45,14 @@ public class Report1 {
 	{
 		double sum = 0;
 		int index = 1;
+		
 		System.out.printf("%-30s %-30s %-10s\n", columns);
 		
 		for(Map.Entry<String, Double> entry : reportDatas.entrySet())
 		{
 			String person = entry.getKey();
 			Double hours = entry.getValue();
-			
+
 			String[] values = {String.valueOf(index), person, hours.toString()};
 			System.out.printf("%-30s %-30s %-10s\n", values);
 			

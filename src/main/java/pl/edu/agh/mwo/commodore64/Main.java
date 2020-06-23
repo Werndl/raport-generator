@@ -1,10 +1,5 @@
 package pl.edu.agh.mwo.commodore64;
 
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-
 public class Main
 {
 	public static void main(String[] args)
@@ -17,6 +12,5 @@ public class Main
 		 * " - y - " + t.getYear() + " - h - " + t.getProject() + " - p - " +
 		 * t.getPerson()); }
 		 */
-		 
 	}
 }

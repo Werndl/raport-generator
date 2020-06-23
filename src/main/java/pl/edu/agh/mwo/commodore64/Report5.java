@@ -55,6 +55,7 @@ public class Report5
 	{
 		double sum = 0;
 		int index = 1;
+		
 		System.out.printf("%-30s %-30s %-10s\n", columns);
 		
 		for(Map.Entry<String, Double> entry : workingHours.entrySet())
