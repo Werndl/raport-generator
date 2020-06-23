@@ -22,18 +22,18 @@ public class ExcelPrinter {
 			}
 			else {
 			ReportsExtractor.writeExcel(columns, data);
-	        System.out.println("Wygenerowany raport jest dostepny w wybranej lokalizacji!");
+	        System.out.println("Wygenerowany raport jest dostępny w wybranej lokalizacji!");
 			}
 		} catch (IOException e) {
-			System.out.println("PODANA SCIEZKA JEST BLEDNA. Powrot do Menu");
+			System.out.println("PODANA SCIEŻKA JEST BŁĘDNA. Powrót do Menu");
 			//e.printStackTrace();
 		}
 	}
 	
 	public static void checkIfUserWantToPrintExcel(int raport) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("\nCzy chcesz wygenerowac raport do pliku Excel?");
-		System.out.println("WPISZ: 1 jesli TAK, wcisnij inny klawisz jesli NIE: ");
+		System.out.println("\nCzy chcesz wygenerować raport do pliku Excel?");
+		System.out.println("WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: ");
 		
 		String generationStatus = scan.next();
 		
@@ -55,7 +55,7 @@ public class ExcelPrinter {
 				printToExcel(Report5.getColumns(), Report5.getData());
 				break;
 			default:
-				System.out.println("Blad generacji. Powrot do Menu");
+				System.out.println("Błąd generacji. Powrót do Menu");
 				break;
 			}			
 		}

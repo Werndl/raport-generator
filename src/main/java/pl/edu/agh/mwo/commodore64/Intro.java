@@ -11,7 +11,7 @@ public class Intro {
 	public static String welcomePage() {
 
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println("Witamy w programie raportow pracowniczych!\n");
+		System.out.println("Witamy w programie raportów pracowniczych!\n");
 
 		return getPath();
 	}
@@ -20,23 +20,31 @@ public class Intro {
 		try {
 			Scanner scan = new Scanner(System.in);
 
-			System.out.print("Prosze podac sciezke katalogu: ");
-			reportsPath = scan.next();
+			System.out.print("Proszę podać scieżkę katalogu danych: ");
+			reportsPath = scan.nextLine();
 			File file = new File(reportsPath);
 			if (file.exists()) {
 				System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 				return reportsPath;
 			} else {
-				System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
+				System.out.println("\nPODANA SCIEŻKA JEST BŁĘDNA\n");
 				getPath();
 			}
 		} catch (NoSuchElementException err) {
-			System.out.println("\nPODANA SCIEZKA JEST BLEDNA\n");
+			System.out.println("\nPODANA SCIEŻKA JEST BŁĘDNA\n");
 			getPath();
 		}
 		return reportsPath;
 	}
 	
+	public static String getReportsPath() {
+		return reportsPath;
+	}
+
+	public static void setReportsPath(String reportsPath) {
+		Intro.reportsPath = reportsPath;
+	}
+
 	public static void app() {
 		String reportsPath = Intro.welcomePage();
 		PathCommander.getPath(reportsPath);
