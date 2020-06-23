@@ -51,11 +51,12 @@ public class ReportsSelector {
 
     public void CheckIfUserWantToGenerateAgain(){
         try {
-            System.out.print("\nCzy chcesz wygenerowac kolejny raport? (WPISZ: 1 jesli TAK, wpisz 0 jesli NIE): ");
+            System.out.print("\nCzy chcesz wygenerowac kolejny raport?");
+            System.out.println("WPISZ: 1 jesli TAK, wcisnij inny klawisz jesli NIE: ");
             Scanner scan = new Scanner(System.in);
 
-            int generationAgainStatus = scan.nextInt();
-            if (generationAgainStatus == 1){
+            String generationAgainStatus = scan.next();
+            if (generationAgainStatus.equals("1")){
                 SelectReport();
             }
             else {

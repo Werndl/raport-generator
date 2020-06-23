@@ -25,7 +25,7 @@ public class ExcelPrinter {
 	        System.out.println("Wygenerowany raport jest dostepny w wybranej lokalizacji!");
 			}
 		} catch (IOException e) {
-			System.out.println("Podana sciezka jest bledna. Powrot do Menu");
+			System.out.println("PODANA SCIEZKA JEST BLEDNA. Powrot do Menu");
 			//e.printStackTrace();
 		}
 	}

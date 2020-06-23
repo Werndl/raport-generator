@@ -8,7 +8,7 @@ public class Intro {
 
 	private static String reportsPath;
 
-	private static String welcomePage() {
+	public static String welcomePage() {
 
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("Witamy w programie raportow pracowniczych!\n");
