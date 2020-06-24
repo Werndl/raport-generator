@@ -9,7 +9,7 @@ public class ExcelPrinter {
 	public static void printToExcel(String[] columns, ArrayList<String[]> data) {
 		try {
 			if (data.isEmpty()) {
-				System.out.println("Raport jest pusty - plik nie zostanie wygenerowany.");
+				System.out.println("Raport jest pusty - plik nie zostanie wygenerowany");
 			} else {
 				ReportsExtractor.writeExcel(columns, data);
 				System.out.println("Wygenerowany raport jest dostępny w wybranej lokalizacji!");

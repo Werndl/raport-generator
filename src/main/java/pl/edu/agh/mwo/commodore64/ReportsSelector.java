@@ -81,7 +81,7 @@ public class ReportsSelector {
                     Report1 report1 = new Report1(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 2:
                     GeneratingReportInfo(reportOption);
@@ -89,23 +89,23 @@ public class ReportsSelector {
                     Report2 report2 = new Report2(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 3:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     Report3 report3 = new Report3(PathCommander.getDataModel(), GetYearToReportGenerating(), GetNameAndSurnameToReportGenerating());
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 4:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(4);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 5:
                     GeneratingReportInfo(reportOption);
@@ -113,19 +113,19 @@ public class ReportsSelector {
                     Report5 report5 = new Report5(PathCommander.getDataModel(), GetProjectToReportGenerating());
                     System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 6:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(6);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 7:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     System.out.print(7);
-                    System.out.println("\n++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 0:
                 	System.out.println("Koniec pracy");
