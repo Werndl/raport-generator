@@ -23,6 +23,7 @@ public class Report4 {
 		}
 		
 		public HashMap<String,Double> projects = new HashMap<String,Double>();
+		public HashMap<String,Double> projectsByPercent = new HashMap<String,Double>();
 		public Double sum = 0.0;
 		
 	}
@@ -43,6 +44,8 @@ public class Report4 {
 	    }
 	    makePersonProjects(filteredDatas);
 	    fillReport();
+	    fillAllProjects();
+	    sumProjectsForPerson();
 		printReport();
 	}
 
@@ -80,6 +83,14 @@ public class Report4 {
 			for(String a: pp.projects.keySet()) {
 				
 			if(!allProjects.contains(a)) { allProjects.add(a); }
+			}
+		}
+	}
+	
+	private void sumProjectsForPerson() {
+		for(PersonProjects pp: personsProjects) {
+			for(Double a: pp.projects.values()) {
+				pp.sum += a;
 			}
 		}
 	}
