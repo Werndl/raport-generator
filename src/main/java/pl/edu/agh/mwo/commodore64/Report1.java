@@ -16,6 +16,8 @@ public class Report1 {
 
 	public Report1(ArrayList<Task> tasks, String yearFilter) {
 
+		data.clear();
+		
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("Alfabetyczna lista pracowników za rok " + yearFilter);
 		for (Task i : tasks) {

@@ -13,6 +13,8 @@ public class Report2 {
 	private static ArrayList<String[]> data = new ArrayList<>();
 
 	public Report2(ArrayList<Task> dataModel, String year) {
+		
+		data.clear();
 		if (isYearExist(dataModel, year)) {
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 			System.out.println("Alfabetyczna lista projektów za rok " + year);

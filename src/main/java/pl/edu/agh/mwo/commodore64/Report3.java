@@ -27,6 +27,7 @@ public class Report3 {
 
 	public Report3(ArrayList<Task> dataModel, String year, String employee) {
 
+		data.clear();
 		if (checkEmployee(dataModel, year, employee)) {
 
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");

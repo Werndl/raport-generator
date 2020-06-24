@@ -13,6 +13,8 @@ public class Report5 {
 	private static ArrayList<String[]> data = new ArrayList<>();
 
 	public Report5(ArrayList<Task> dataModel, String project) {
+		
+		data.clear();
 		if (projectExistanceCheck(dataModel, project)) {
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 			System.out.println("Szczegółowy wykaz pracy w projekcie: " + project);
