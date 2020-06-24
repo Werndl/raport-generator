@@ -1,6 +1,7 @@
 package pl.edu.agh.mwo.commodore64;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -20,23 +21,23 @@ public class Intro {
 		try {
 			Scanner scan = new Scanner(System.in);
 
-			System.out.print("Proszę podać scieżkę katalogu danych: ");
+			System.out.print("Proszę podać ścieżkę katalogu danych: ");
 			reportsPath = scan.nextLine();
 			File file = new File(reportsPath);
 			if (file.exists()) {
 				System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 				return reportsPath;
 			} else {
-				System.out.println("\nPODANA SCIEŻKA JEST BŁĘDNA\n");
+				System.out.println("\nPODANA ŚCIEŻKA JEST BŁĘDNA\n");
 				getPath();
 			}
 		} catch (NoSuchElementException err) {
-			System.out.println("\nPODANA SCIEŻKA JEST BŁĘDNA\n");
+			System.out.println("\nPODANA ŚCIEŻKA JEST BŁĘDNA\n");
 			getPath();
 		}
 		return reportsPath;
 	}
-	
+
 	public static String getReportsPath() {
 		return reportsPath;
 	}
@@ -48,8 +49,8 @@ public class Intro {
 	public static void app() {
 		String reportsPath = Intro.welcomePage();
 		PathCommander.getPath(reportsPath);
-		
+
 		ReportsSelector reportSelector = new ReportsSelector();
-		  reportSelector.SelectReport();
+		reportSelector.SelectReport();
 	}
 }

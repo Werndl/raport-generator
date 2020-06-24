@@ -8,26 +8,29 @@ public class Report3 {
 
 	private ArrayList<Task> projectWorkers = new ArrayList<>();
 	private TreeMap<String, Double> workingHours = new TreeMap<>();
-	
-	//for Excel print
-	private static String[] columns = {"Lp", "Miesiac", "Projekt", "Godziny [h]"};
+
+	// for Excel print
+	private static String[] columns = { "Lp", "Miesiac", "Projekt", "Godziny [h]" };
 	private static ArrayList<String[]> data = new ArrayList<>();
 
 	private boolean checkEmployee(ArrayList<Task> dataModel, String year, String employee) {
 
 		for (Task i : dataModel) {
-			if (i.getPerson().equals(employee)) {
+			if (i.getPerson().equals(employee) && i.getYear().equals(year)) {
 				return true;
 			}
 		}
+
 		System.out.println("Brak danych pracownika na rok " + year);
 		return false;
 	}
 
 	public Report3(ArrayList<Task> dataModel, String year, String employee) {
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println(employee + " | Szczegółowy wykaz pracy za rok " + year);
+
 		if (checkEmployee(dataModel, year, employee)) {
+
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println(employee + " | Szczegółowy wykaz pracy za rok " + year);
 			for (Task i : dataModel) {
 				// for checking
 				// System.out.println(i.getYear() + " - " + i.getPerson() + " - " + i.getMonth()
@@ -72,9 +75,10 @@ public class Report3 {
 					"Wrzesień", "Pażdziernik", "Listopad", "Grudzień" };
 			String project = keyValues[1];
 
-			String[] values = {String.valueOf(index),monthName[Integer.parseInt(month) - 1], project, hours.toString()};
+			String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
+					hours.toString() };
 			System.out.printf("%-5s %-15s %-20s %-10s\n", values);
-			
+
 			data = ExcelPrinter.createStringTemplate(values);
 
 			index++;

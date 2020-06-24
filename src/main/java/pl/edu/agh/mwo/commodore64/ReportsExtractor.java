@@ -69,7 +69,7 @@ public class ReportsExtractor {
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd-HHmm");
 		LocalDateTime now = LocalDateTime.now();
-		System.out.print("Prosze podac nazwe raportu: ");
+		System.out.print("Proszę podać nazwę raportu: ");
 		return fileName = path + "/" + scan.nextLine() + "-" + dtf.format(now) + ".xlsx";
 	}
 
