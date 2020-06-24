@@ -9,61 +9,59 @@ public class Report1 {
 	private TreeMap<String, Double> reportDatas = new TreeMap<String, Double>();
 	private ArrayList<Task> filtredDatas = new ArrayList<Task>();
 	private double temp;
-	
-	//for Excel print
-		private static String[] columns = {"Lp", "Pracownik", "Godziny [h]"};
-		private static ArrayList<String[]> data = new ArrayList<>();
-	
-    public Report1(ArrayList<Task> tasks, String yearFilter){	
-    for (Task i: tasks) {
-    	if(i.getYear().equals(yearFilter)) {
-    		filtredDatas.add(i);
-    	}   
-    
-    }
-    fillReport();
-	printReport();
-}
-    
-    private void fillReport() {
-    	
-    	for (Task i: filtredDatas) {
-    		if (reportDatas.containsKey(i.getPerson()) == true)
-    		{
-    			temp = reportDatas.get(i.getPerson()) + Double.parseDouble(i.getHours());
-    			reportDatas.replace(i.getPerson(), temp);
-    			}
-    		else {
-    			reportDatas.put(i.getPerson(),Double.parseDouble(i.getHours()));
-    		}
-    	}
-    	
-    	
-    }
 
-    public void printReport()
-	{
+	// for Excel print
+	private static String[] columns = { "Lp", "Pracownik", "Godziny [h]" };
+	private static ArrayList<String[]> data = new ArrayList<>();
+
+	public Report1(ArrayList<Task> tasks, String yearFilter) {
+
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("Alfabetyczna lista pracowników za rok " + yearFilter);
+		for (Task i : tasks) {
+			if (i.getYear().equals(yearFilter)) {
+				filtredDatas.add(i);
+			}
+
+		}
+		fillReport();
+		printReport();
+	}
+
+	private void fillReport() {
+
+		for (Task i : filtredDatas) {
+			if (reportDatas.containsKey(i.getPerson()) == true) {
+				temp = reportDatas.get(i.getPerson()) + Double.parseDouble(i.getHours());
+				reportDatas.replace(i.getPerson(), temp);
+			} else {
+				reportDatas.put(i.getPerson(), Double.parseDouble(i.getHours()));
+			}
+		}
+
+	}
+
+	public void printReport() {
 		double sum = 0;
 		int index = 1;
-		
-		System.out.printf("%-30s %-30s %-10s\n", columns);
-		
-		for(Map.Entry<String, Double> entry : reportDatas.entrySet())
-		{
+
+		System.out.printf("%-10s %-30s %-10s\n", columns);
+
+		for (Map.Entry<String, Double> entry : reportDatas.entrySet()) {
 			String person = entry.getKey();
 			Double hours = entry.getValue();
 
-			String[] values = {String.valueOf(index), person, hours.toString()};
-			System.out.printf("%-30s %-30s %-10s\n", values);
-			
-			data = ExcelPrinter.createStringTemplate(values);
+			String[] values = { String.valueOf(index), person, hours.toString() };
+			System.out.printf("%-10s %-30s %-10s\n", values);
+
+			data.add(values);
 			sum += hours;
 			index++;
 		}
-		
-		System.out.printf("%-61s %-10s", "Suma: ", sum);
-		String[] sumFinal = {"Suma:","",String.valueOf(sum)};
-		data = ExcelPrinter.createStringTemplate(sumFinal);
+
+		System.out.printf("%-41s %-10s", "Suma: ", sum);
+		String[] sumFinal = { "Suma:", "", String.valueOf(sum) };
+		data.add(sumFinal);
 	}
 
 	public static String[] getColumns() {

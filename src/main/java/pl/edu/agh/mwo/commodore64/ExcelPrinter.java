@@ -6,15 +6,6 @@ import java.util.Scanner;
 
 public class ExcelPrinter {
 
-	private static ArrayList<String[]> data = new ArrayList<>();
-
-	public static ArrayList<String[]> createStringTemplate(String[] values) {
-
-		data.add(values);
-
-		return data;
-	}
-
 	public static void printToExcel(String[] columns, ArrayList<String[]> data) {
 		try {
 			if (data.isEmpty()) {
@@ -31,7 +22,7 @@ public class ExcelPrinter {
 	}
 
 	public static void checkIfUserWantToPrintExcel(int raport) {
-		if (validateEmptyData(raport)) {
+		//if (validateEmptyData(raport)) {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("\nCzy chcesz wygenerować raport do pliku Excel?");
 			System.out.println("WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: ");
@@ -60,9 +51,9 @@ public class ExcelPrinter {
 					break;
 				}
 			}
-		} else {
+		//} //else {
 
-		}
+		//}
 
 	}
 
@@ -84,11 +75,10 @@ public class ExcelPrinter {
 				return false;
 			}
 			break;
-		case 4:
-			// if(Report4.getData().isEmpty()|| Report4.getData() == null) {
-			return false;
-		// }
-		// break;
+		/*
+		 * case 4: if(Report4.getData().isEmpty()|| Report4.getData() == null) { return
+		 * false; } break;
+		 */
 		case 5:
 			if (Report5.getData().isEmpty() || Report5.getData() == null) {
 				return false;
