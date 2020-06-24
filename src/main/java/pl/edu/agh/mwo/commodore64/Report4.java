@@ -46,6 +46,7 @@ public class Report4 {
 	    fillReport();
 	    fillAllProjects();
 	    sumProjectsForPerson();
+	    fillProjectByPercent();
 		printReport();
 	}
 
@@ -88,10 +89,14 @@ public class Report4 {
 	}
 	
 	private void sumProjectsForPerson() {
-		for(PersonProjects pp: personsProjects) {
-			for(Double a: pp.projects.values()) {
-				pp.sum += a;
-			}
+		for(PersonProjects pp: personsProjects) { 
+			for(Double a: pp.projects.values()) { pp.sum += a;}
+		}
+	}
+	
+	private void fillProjectByPercent() {
+		for(PersonProjects pp: personsProjects) { 
+			for(String a: pp.projects.keySet()) { pp.projectsByPercent.put(a,(pp.projects.get(a)/pp.sum)*100 );}
 		}
 	}
 	
