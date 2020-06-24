@@ -35,7 +35,7 @@ public class ReportsSelector {
 
     public String GetNameAndSurnameToReportGenerating(){
         Scanner scan = new Scanner(System.in);
-        System.out.print("Podaj imie i nazwisko osoby, dla której chcesz wygenerować raport: ");
+        System.out.print("Podaj imię i nazwisko osoby, dla której chcesz wygenerować raport: ");
         return scan.nextLine();
     }
 
