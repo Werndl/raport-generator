@@ -37,10 +37,7 @@ public class Report4 {
 	
 	public Report4(ArrayList<Task> tasks, String yearFilter){	
 	    for (Task i: tasks) {
-	    	if(i.getYear().equals(yearFilter)) {
-	    		filteredDatas.add(i);
-	    	}   
-	    
+	    	if(i.getYear().equals(yearFilter)) { filteredDatas.add(i); }   
 	    }
 	    makePersonProjects(filteredDatas);
 	    fillReport();
