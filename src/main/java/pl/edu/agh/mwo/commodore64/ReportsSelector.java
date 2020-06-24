@@ -102,7 +102,7 @@ public class ReportsSelector {
                 case 4:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-                    System.out.print(4);
+                    //Report4 report4 = new Report4(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
