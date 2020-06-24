@@ -41,7 +41,7 @@ public class Report4 {
 	    	}   
 	    
 	    }
-	    
+	    makePersonProjects(filteredDatas);
 	    fillReport();
 		printReport();
 	}
@@ -65,21 +65,23 @@ public class Report4 {
 						temp = p.projects.get(t.getProject());
 						p.projects.replace(t.getProject(), temp + Double.parseDouble(t.getHours()));
 					}
-					else {
-						p.projects.put(t.getProject(),Double.parseDouble(t.getHours()));
-						
-					}
+					else { p.projects.put(t.getProject(),Double.parseDouble(t.getHours())); }
 					
 				}
-				else {
-					personsProjects.add(new PersonProjects(t.getPerson()));
-					
-				
+				else { personsProjects.add(new PersonProjects(t.getPerson())); }
 			}
 		}
+	}
+	
+	
+	private void fillAllProjects() {
+		for(PersonProjects pp: personsProjects) {
+			
+			for(String a: pp.projects.keySet()) {
+				
+			if(!allProjects.contains(a)) { allProjects.add(a); }
+			}
 		}
-		
-		
 	}
 	
 }
