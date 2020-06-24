@@ -1,5 +1,6 @@
 package pl.edu.agh.mwo.commodore64;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -16,49 +17,54 @@ public class ReportsExtractor {
 
 	public static void writeExcel(String[] columns, ArrayList<String[]> data) throws IOException {
 		// Create a Workbook
-		Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 
-		getFileName();
+		fileName = getFileName();
+		if (!fileName.isEmpty() || !fileName.isBlank() || fileName != null) {
 
-		// Create a Sheet
-		Sheet sheet = workbook.createSheet("Report");
+			Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 
-		// Create a Font for styling header cells
-		Font headerFont = workbook.createFont();
-		headerFont.setBold(true);
-		headerFont.setFontHeightInPoints((short) 12);
+			// Create a Sheet
+			Sheet sheet = workbook.createSheet("Report");
 
-		// Create a CellStyle with the font
-		CellStyle headerCellStyle = workbook.createCellStyle();
-		headerCellStyle.setFont(headerFont);
+			// Create a Font for styling header cells
+			Font headerFont = workbook.createFont();
+			headerFont.setBold(true);
+			headerFont.setFontHeightInPoints((short) 12);
 
-		// Create a Row
-		Row headerRow = sheet.createRow(0);
+			// Create a CellStyle with the font
+			CellStyle headerCellStyle = workbook.createCellStyle();
+			headerCellStyle.setFont(headerFont);
 
-		// Create cells
-		for (int i = 0; i < columns.length; i++) {
-			Cell cell = headerRow.createCell(i);
-			cell.setCellValue(columns[i]);
-			cell.setCellStyle(headerCellStyle);
-		}
+			// Create a Row
+			Row headerRow = sheet.createRow(0);
 
-		// Create Other rows and cells with employees data
-		int rowNum = 1;
-		for (String[] i : data) {
-			Row row = sheet.createRow(rowNum++);
-
-			for (int k = 0; k < i.length; k++) {
-				row.createCell(k).setCellValue(i[k]);
+			// Create cells
+			for (int i = 0; i < columns.length; i++) {
+				Cell cell = headerRow.createCell(i);
+				cell.setCellValue(columns[i]);
+				cell.setCellStyle(headerCellStyle);
 			}
+
+			// Create Other rows and cells with employees data
+			int rowNum = 1;
+			for (String[] i : data) {
+				Row row = sheet.createRow(rowNum++);
+
+				for (int k = 0; k < i.length; k++) {
+					row.createCell(k).setCellValue(i[k]);
+				}
+			}
+
+			// Write the output to a file
+
+			FileOutputStream fileOut = new FileOutputStream(fileName);
+			workbook.write(fileOut);
+			fileOut.close();
+
+			// Closing the workbook
+			workbook.close();
 		}
 
-		// Write the output to a file
-		FileOutputStream fileOut = new FileOutputStream(fileName);
-		workbook.write(fileOut);
-		fileOut.close();
-
-		// Closing the workbook
-		workbook.close();
 	}
 
 	private static String getFileName() {
@@ -67,29 +73,34 @@ public class ReportsExtractor {
 
 		String path = getFilePath();
 
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd-HHmm");
+		if (path == null) {
+			return "";
+		}
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yy_MM_dd_HHmm");
 		LocalDateTime now = LocalDateTime.now();
 		System.out.print("Proszę podać nazwę raportu: ");
-		return fileName = path + "/" + scan.nextLine() + "-" + dtf.format(now) + ".xlsx";
+		return fileName = path + "/" + scan.nextLine() + "_" + dtf.format(now) + ".xlsx";
 	}
 
 	private static String getFilePath() {
 		Scanner scan = new Scanner(System.in);
 
-		
 		while (fileName == null || fileName.contains(Intro.getReportsPath())) {
-		System.out.print("Proszę podać scieżkę do zapisania pliku:");
-		fileName = scan.nextLine();
-		if (fileName.contains(Intro.getReportsPath())) {
-			System.out.println("Plik nie może zostać zapisany w katalogu danych. Spróbuj ponownie");
-		}
-
-		
-		} 
-			if (fileName.contains("\\")) {
-				fileName = fileName.replace("\\", "/");
+			System.out.print("Proszę podać scieżkę do zapisania pliku:");
+			fileName = scan.nextLine();
+			if (fileName.contains(Intro.getReportsPath())) {
+				System.out.println("Plik nie może zostać zapisany w katalogu danych. Spróbuj ponownie");
+			}
 
 		}
-			return fileName;
+		if (fileName.contains("\\")) {
+			fileName = fileName.replace("\\", "/");
+		}
+
+		File f = new File(fileName);
+		if (!f.exists()) {
+			return null;
+		}
+		return fileName;
 	}
 }
