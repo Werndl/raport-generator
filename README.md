@@ -24,6 +24,7 @@ Data | Zadanie | Czas [h]
 | 13.01.2018      | Wizyta u klienta | 7 |
 | 14.01.2018      | Podsumowanie spotkania      |   5.3 |
 | 15.01.2018 | Ocena wymagań przygotowanych przez Janka      |    1.2 |
+
 Zadaniem programu jest generacja poszczególnych raportów przedstawiające wymagane zestawienie statystyczne (opis dostępnych funkcji w dalszej części).
 ### Wykonanie
 Aplikacja została zaimplementowana w środowisku java przez zespół programistyczny Commodore 64.
