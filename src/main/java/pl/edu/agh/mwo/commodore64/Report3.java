@@ -14,7 +14,7 @@ public class Report3 {
 	private static ArrayList<String[]> data = new ArrayList<>();
 
 	private boolean checkEmployee(ArrayList<Task> dataModel, String employee) {
-		
+
 		for (Task i : dataModel) {
 			if (i.getPerson().equals(employee)) {
 				return true;
@@ -38,7 +38,7 @@ public class Report3 {
 	}
 
 	private boolean checkEmployeeAndYear(ArrayList<Task> dataModel, String year, String employee) {
-		
+
 		boolean yearCheck = checkYear(dataModel, year);
 		boolean employeeCheck = checkEmployee(dataModel, employee);
 		for (Task i : dataModel) {
@@ -46,7 +46,7 @@ public class Report3 {
 				return true;
 			}
 		}
-		if (yearCheck == false || employeeCheck == false ) {
+		if (yearCheck == false || employeeCheck == false) {
 			return false;
 		}
 		System.out.println("Brak danych pracownika na rok " + year);
@@ -104,11 +104,21 @@ public class Report3 {
 					"Wrzesień", "Pażdziernik", "Listopad", "Grudzień" };
 			String project = keyValues[1];
 
-			String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
-					hours.toString() };
-			System.out.printf("%-10s %-15s %-20s %-10s\n", values);
+			int hoursVal = 0;
 
-			data.add(values);
+			if (hours % 1 == 0) {
+				hoursVal = (int) Math.round(hours);
+				String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
+						String.valueOf(hoursVal) };
+				System.out.printf("%-10s %-15s %-20s %-10s\n", values);
+				data.add(values);
+			}
+			else {
+				String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
+					hours.toString() };
+				System.out.printf("%-10s %-15s %-20s %-10s\n", values);
+				data.add(values);
+			}
 
 			index++;
 		}
