@@ -1,18 +1,11 @@
 # Raport generator
-### Wymagania
-- JDK-13.0.1.9
-- Maven
-### Instalacja
-```sh
-$ git clone
-```
 ## Spis treści
 * [Wprowadzenie](#wprowadzenie)
 * [Uruchomienie aplikacji](#uruchomienie-aplikacji)
 * [Menu](#menu)
 * [Raporty](#raporty)
 * [Koniec pracy](#koniec-pracy)
-* [Obsluga bledow](#obsluga-bledow)
+* [Obsługa błędów](#obsluga-bledow)
 ## Wprowadzenie
 ### Informacje ogólne
 Aplikacja jest programem konsolowym. Opiera się na wczytywaniu miesięcznych raportów tasków pracowników w formacie Excel, umieszczonych w odpowiedniej strukturze folderów: .../[YYYY]/[MM]
@@ -30,6 +23,13 @@ Zadaniem programu jest generacja poszczególnych raportów przedstawiające wyma
 ### Wykonanie
 Aplikacja została zaimplementowana w środowisku java przez zespół programistyczny Commodore 64.
 ## Uruchomienie aplikacji
+### Wymagania
+- JDK-13.0.1.9
+- Maven
+### Instalacja
+```sh
+$ git clone
+```
 Administrator katalogu odpowiedzialny jest za dopilnowanie poprawnego nazewnictwa pliku, tj. plik powinien być nazwany unikalnie dla każdego pracownika Imie_Nazwisko.
 
 W przypadku występowania pracowników o takim samym nazwisku, do nazwy pliku konieczne jest wprowadzenie unikalnego numeru w celu rozróżnienia tych dwóch osób. Sposób numeracji pozostawiony jest do decyzji użytkownika, jednakże w dalszym funkcjonowaniu programu, nazwa ta będzie konsekwentnie przypisana do pracownika.
@@ -292,4 +292,4 @@ Proszę podać ścieżkę do zapisania pliku:E:\jnodz\Documents\IT\PROJEKT\rapor
 Plik nie może zostać zapisany w katalogu danych. Spróbuj ponownie
 Proszę podać ścieżkę do zapisania pliku:
 ```
-Zadaniem użytkownnika jest podanie innej lokalizacji folderu.
+Zadaniem użytkownika jest podanie innej lokalizacji folderu.
