@@ -84,15 +84,73 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 2
 Parametrem raportu jest rok.
+```ssh
+Generowanie raportu numer: 2
+++++++++++++++++++++++++++++++++++++++++++
+Podaj rok, dla którego chcesz wygenerować raport: 2020
+++++++++++++++++++++++++++++++++++++++++++
+Alfabetyczna lista projektów za rok 2020
+Lp         Projekt                        Godziny [h]
+1          Projekt 1                      312.25
+2          Projekt 2                      353.856   
+3          Projekt 3                      315.61    
+Suma:                                     981.666   
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 3
 Parametrami raportu są rok i pracownik. 
+```sh
+Generowanie raportu numer: 3
+++++++++++++++++++++++++++++++++++++++++++
+Podaj rok, dla którego chcesz wygenerować raport: 2018
+Podaj imię i nazwisko osoby, dla której chcesz wygenerować raport: Damian Kowal
+++++++++++++++++++++++++++++++++++++++++++
+Damian Kowal | Szczegółowy wykaz pracy za rok 2018
+Lp         Miesiąc         Projekt              Godziny [h]
+1          Styczeń         Projekt 1            13.5      
+2          Styczeń         Projekt 3            1.2       
+3          Styczeń         Projekt2             16        
+4          Luty            Projekt 1            21        
+5          Marzec          Projekt 1            18        
+6          Kwiecień        Projekt 1            22        
+7          Kwiecień        Projekt 2            18        
+8          Maj             Projekt 1            27        
+9          Maj             Projekt 2            18        
+10         Sierpień        Projekt 3            40        
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 4
 Parametrem raportu jest rok. 
+```sh
+```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 5
 Parametrem raportu jest nazwa projektu. 
+```sh
+Generowanie raportu numer: 5
+++++++++++++++++++++++++++++++++++++++++++
+Podaj projekt, dla którego chcesz wygenerować raport: Projekt 1
+++++++++++++++++++++++++++++++++++++++++++
+Szczegółowy wykaz pracy w projekcie: Projekt 1
+Lp         Pracownik                      Godziny [h]
+1          Damian Kowal                   101.5     
+2          Karol Strassburger             278       
+3          Mario Budowlaniec              182.82499999999996
+4          Roksana Ekogroszek             110.75999999999999
+Suma:                                     673.0849999999999
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 6
 Parametrem raportu jest rok.
