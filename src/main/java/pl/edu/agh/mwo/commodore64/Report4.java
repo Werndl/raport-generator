@@ -31,6 +31,8 @@ public class Report4 {
 	
 	private TreeSet<String> allProjects = new TreeSet<String>();
 	
+	private static ArrayList<String> columns = new ArrayList<String>();
+	
 	private ArrayList<PersonProjects> personsProjects = new ArrayList<PersonProjects>();
 	
 	private ArrayList<Task> filteredDatas = new ArrayList<Task>();
@@ -40,19 +42,19 @@ public class Report4 {
 	    	if(i.getYear().equals(yearFilter)) { filteredDatas.add(i); }   
 	    }
 	    makePersonProjects(filteredDatas);
-	    fillReport();
 	    fillAllProjects();
 	    sumProjectsForPerson();
 	    fillProjectByPercent();
+	    beforePrintTask();
 		printReport();
 	}
 
 	
-	private void fillReport(){
-		
-	}
 	
 	private void printReport() {
+		
+		
+		
 		
 	}
 	
@@ -95,6 +97,12 @@ public class Report4 {
 		for(PersonProjects pp: personsProjects) { 
 			for(String a: pp.projects.keySet()) { pp.projectsByPercent.put(a,(pp.projects.get(a)/pp.sum)*100 );}
 		}
+	}
+	
+	private void beforePrintTask() {
+		columns.add("Lp");
+		columns.add("Pracownik");
+		for (String a: allProjects) {columns.add(a);}
 	}
 	
 }
