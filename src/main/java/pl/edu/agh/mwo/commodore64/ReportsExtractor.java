@@ -86,7 +86,7 @@ public class ReportsExtractor {
 		Scanner scan = new Scanner(System.in);
 		fileName = null;
 		while (fileName == null || fileName.contains(Intro.getReportsPath())) {
-			System.out.print("Proszę podać scieżkę do zapisania pliku:");
+			System.out.print("Proszę podać ścieżkę do zapisania pliku:");
 			fileName = scan.nextLine();
 			if (fileName.contains(Intro.getReportsPath())) {
 				System.out.println("Plik nie może zostać zapisany w katalogu danych. Spróbuj ponownie");
