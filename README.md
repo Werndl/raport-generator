@@ -102,7 +102,7 @@ Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to z
 Parametrem raportu jest jest rok.
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Generacja pliku do pliku Excel
-## Koniec pracy
+## Koniec pracy programu
 Program można zakończyć z dwóch poziomów aplikacji. 
 Z poziomu opcji MENU, po wybraniu kodu 0, program zakończy swoją pracę.
 ```sh
@@ -126,7 +126,7 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 Any
 Koniec pracy
 ```
-## Obsluga bledow
+## Obsługa błędów
 ### Niepoprawna ścieżka katalogu
 W przypadku podania przez użytkownika błędnej ścieżki do katalogu danych, program odpowiednio zareaguje. Zostanie wyświetlony komunikat, że podana ścieżka jest błędna. Aplikacja zapyta użytkownika o ponowne wprowadzenie ścieżki.
 ```sh
