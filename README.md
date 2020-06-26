@@ -148,10 +148,12 @@ W przypadku gdy program daje informację, że komórka jest pusta, a znajduje si
 Projekt: Projekt 1 - Komorka (7, 1) jest pusta!
 ```
 #### Daty niezgodne ze strukturą folderu
+Daty w pliku .xls muszą być zgodne ze  strukturą katalogu. Jeżeli w pliku znajduje się data, która wskazuje na inny folder, program uzna to jako błąd danych.
 ```sh
 Projekt: Projekt2 - Komorka (2, 1) - data nie jest zgodna z układem katalogow!
 ```
 #### Błędne dane
+Jeżeli program wyłapie jakiekolwiek inne błędy w danych, które nie spełniają wymagań, uzna je jako błąd danych.
 ```sh
 Projekt: Projekt 3 - Komorka (3, 1) ma niepoprawne dane!
 ```
@@ -266,7 +268,7 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Błędy przy generacji pliku Excel
-W momencie genrowania raportu, użytkownik zostanie poproszony o podanie ścieżki, w której będzie chciał zapisać plik. Jeśli będzie ona nieprawidłowa, zostanie wyświetlony odpowiedni komunikat i menu do generacji pliku zostanie zamknięte.
+W momencie genrowania raportu, użytkownik zostanie poproszony o podanie ścieżki, w której będzie chciał zapisać plik. Jeśli będzie ona nieprawidłowa, zostanie wyświetlony odpowiedni komunikat i zapytanie czy użytkownik chce spróblować ponownie.
 ```sh
 ++++++++++++++++++++++++++++++++++++++++++
 
@@ -274,14 +276,17 @@ Czy chcesz wygenerować raport do pliku Excel?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 1
 Proszę podać ścieżkę do zapisania pliku: invalid path
-PODANA ŚCIEŻKA JEST BŁĘDNA. Powrót do Menu
+PODANA ŚCIEŻKA JEST BŁĘDNA
+WPISZ: 1 jeśli chcesz spróbować jeszcze raz lub wciśnij inny klawisz jeśli chcesz wrócić do menu.
+any
+Powrót do Menu
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować kolejny raport?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 ```
-Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
-Jeśli użytkownik będzie chciał zapisać plik w folderze katalogu, progran na to nie pozwoli.
+Jeśli użytkownik wpisze dowolny klawisz z wyjątkiem 1, menu do generacji pliku zostanie zamknięte. Jeśli się na to zdecyduje zostanie przekierowany do MENU. Użytkownik dostanie opcję ponownego wygenerowania raportu.
+Jeśli użytkownik będzie chciał zapisać plik w folderze katalogu, program na to nie pozwoli.
 ```sh
 ++++++++++++++++++++++++++++++++++++++++++
 
