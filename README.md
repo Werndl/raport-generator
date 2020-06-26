@@ -100,7 +100,14 @@ Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to z
 #### Raport nr 7
 Parametrem raportu jest jest rok.
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
-### Generacja pliku do pliku Excel
+### Generacja reportu do pliku Excel
+```sh
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+1
+Proszę podać ścieżkę do zapisania pliku: C:\Users\Beata\Documents
+Powrót do Menu
+```
 ## Koniec pracy programu
 Program można zakończyć z dwóch poziomów aplikacji. 
 Z poziomu opcji MENU, po wybraniu kodu 0, program zakończy swoją pracę.
@@ -141,6 +148,16 @@ Proszę podać ścieżkę katalogu danych:
 ### Niepoprawny format pliku
 Program akceptuje tylko pliki z rozszerzeniem xls. Wszystkie inne typy plików (np. txt, xlsx, doc, etc.) zostaną zignorowane.
 ### Niepoprawne dane
+Niepoprawne dane mogą dotyczyć:
+- błędnej ścieżki, np:
+```sh
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+1
+Proszę podać ścieżkę do zapisania pliku:invalid
+PODANA ŚCIEŻKA JEST BŁĘDNA
+WPISZ: 1 jeśli chcesz spróbować jeszcze raz lub wciśnij inny klawisz jeśli chcesz wrócić do menu.
+```
 #### Puste komórki
 W przypadku gdy program daje informację, że komórka jest pusta, a znajduje się na końcu dokumentu, to mogą tam już być wprowadzone jakieś opcje - wtedy nalezy usunąć wiersz, żeby nie wyświetlał się komunikat.
 ```sh
