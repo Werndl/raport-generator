@@ -126,7 +126,7 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 Any
 Koniec pracy
 ```
-## Obsługa błędów
+## Obsluga bledow
 ### Niepoprawna ścieżka katalogu
 W przypadku podania przez użytkownika błędnej ścieżki do katalogu danych, program odpowiednio zareaguje. Zostanie wyświetlony komunikat, że podana ścieżka jest błędna. Aplikacja zapyta użytkownika o ponowne wprowadzenie ścieżki.
 ```sh
