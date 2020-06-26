@@ -26,6 +26,7 @@ Aplikacja została zaimplementowana w środowisku java przez zespół programist
 ### Wymagania
 - JDK-13.0.1.9
 - Maven
+- dowolne IDE, np. IntelliJ IDEA lub Eclipse
 ### Instalacja
 ```sh
 $ git clone
@@ -44,7 +45,6 @@ Witamy w programie raportów pracowniczych!
 
 Proszę podać ścieżkę katalogu danych:
 ```
-
 ## Menu
 Po sukcesywnym odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z ktorego użytownik wybierze interesujący go raport.
 ```sh
@@ -62,7 +62,6 @@ Wpisz wybraną opcję:
 ```
 
 Zadaniem użytkownika jest wprowadzenie do konsoli kodu raportu, który chce wygenerować.
-
 ## Raporty
 #### Raport nr 1
 Parametrem raportu jest rok. 
@@ -158,7 +157,7 @@ Jeżeli program wyłapie jakiekolwiek inne błędy w danych, które nie spełnia
 Projekt: Projekt 3 - Komorka (3, 1) ma niepoprawne dane!
 ```
 ### Błędne parametry raportów
-W porzypadku, gdy uzytkownik poda niewłaściwykod raportu, który chce wygenerować w MENU zostanie poinformowany o tym fakcie przez właściwy komunikat.
+W przypadku gdy użytkownik poda niewłaściwy kod raportu, który chce wygenerować, w MENU zostanie poinformowany o tym fakcie przez właściwy komunikat.
 ```sh
 Wybierz z poniższych opcji raport który chcesz wygenerować:
 Raport 1: Alfabetyczna lista pracowników za dany rok. WPISZ: 1
@@ -219,7 +218,7 @@ Brak danych na rok 2014
 Czy chcesz wygenerować kolejny raport?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 ```
-Jeżeli pracownik w ogóle nie isteniej w danym katalogu, użytkownik zostanie o tym fakcie poinformowany.
+Jeżeli pracownik w ogóle nie istenieje w danym katalogu, użytkownik zostanie o tym fakcie poinformowany.
 ```sh
 Generowanie raportu numer: 3
 ++++++++++++++++++++++++++++++++++++++++++
@@ -232,7 +231,7 @@ Pracownik Jan Kowalski nie istnieje!
 Czy chcesz wygenerować kolejny raport?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 ```
-Jeżeli pracownik istnieje w katalogu i folder wybranego roku znajduje się w katalogu,ale pracownik nie mosiada danych w tym roku, program wyświtli odpowiedni komunikat.
+Jeżeli pracownik istnieje w katalogu i folder wybranego roku znajduje się w katalogu, ale pracownik nie posiada danych w tym roku, program wyświetli odpowiedni komunikat.
 ```sh
 Generowanie raportu numer: 3
 ++++++++++++++++++++++++++++++++++++++++++
@@ -268,7 +267,7 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Błędy przy generacji pliku Excel
-W momencie genrowania raportu, użytkownik zostanie poproszony o podanie ścieżki, w której będzie chciał zapisać plik. Jeśli będzie ona nieprawidłowa, zostanie wyświetlony odpowiedni komunikat i zapytanie czy użytkownik chce spróblować ponownie.
+W momencie generowania raportu, użytkownik zostanie poproszony o podanie ścieżki, w której będzie chciał zapisać plik. Jeśli będzie ona nieprawidłowa, zostanie wyświetlony odpowiedni komunikat i zapytanie czy użytkownik chce spróbować ponownie.
 ```sh
 ++++++++++++++++++++++++++++++++++++++++++
 
