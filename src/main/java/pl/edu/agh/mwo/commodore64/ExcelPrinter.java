@@ -39,9 +39,9 @@ public class ExcelPrinter {
 				case 3:
 					printToExcel(Report3.getColumns(), Report3.getData());
 					break;
-				case 4:
-					printToExcel(Report4.getColumns(), Report4.getData());
-					break;
+//				case 4:
+//					printToExcel(Report4.getColumns(), Report4.getData());
+//					break;
 				case 5:
 					printToExcel(Report5.getColumns(), Report5.getData());
 					break;
@@ -72,11 +72,11 @@ public class ExcelPrinter {
 			}
 			break;
 
-		case 4:
-			if (Report4.getData().isEmpty() || Report4.getData() == null) {
-				return false;
-			}
-			break;
+//		case 4:
+//			if (Report4.getData().isEmpty() || Report4.getData() == null) {
+//				return false;
+//			}
+//			break;
 
 		case 5:
 			if (Report5.getData().isEmpty() || Report5.getData() == null) {
