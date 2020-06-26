@@ -19,7 +19,7 @@ public class ReportsExtractor {
 		// Create a Workbook
 
 		fileName = getFileName();
-		if (!fileName.isEmpty() || !fileName.isBlank() || fileName != null) {
+		if (!fileName.isEmpty() || !fileName.equals("") || fileName != null) {
 
 			Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 

@@ -15,7 +15,7 @@ public class Report2 {
 	public Report2(ArrayList<Task> dataModel, String year) {
 		
 		data.clear();
-		if (isYearExist(dataModel, year)) {
+		if (ifYearExists(dataModel, year)) {
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
 			System.out.println("Alfabetyczna lista projektów za rok " + year);
 			for (Task t : dataModel) {
@@ -27,8 +27,18 @@ public class Report2 {
 			printReport();
 		}
 	}
+	
+	public Report2(ArrayList<Task> dataModel, String year, int reportIndex)
+	{
+		for (Task t : dataModel)
+		{
+			if (t.getYear().equals(year)) project.add(t);
+		}
 
-	private void fillReport() {
+		fillReport();
+	}
+
+	public void fillReport() {
 		for (Task t : project) {
 			if (workingHours.containsKey(t.getProject())) {
 				double dayHours = workingHours.get(t.getProject()) + Double.parseDouble(t.getHours());
@@ -38,7 +48,7 @@ public class Report2 {
 		}
 	}
 
-	private void printReport() {
+	public void printReport() {
 		double sum = 0;
 		int index = 1;
 		System.out.printf("%-10s %-30s %-10s\n", columns);
@@ -61,7 +71,7 @@ public class Report2 {
 		data.add(sumFinal);
 	}
 
-	private boolean isYearExist(ArrayList<Task> dataModel, String year) {
+	public boolean ifYearExists(ArrayList<Task> dataModel, String year) {
 		for (Task t : dataModel) {
 			if (t.getYear().equals(year))
 				return true;
@@ -85,5 +95,15 @@ public class Report2 {
 
 	public void setData(ArrayList<String[]> data) {
 		this.data = data;
+	}
+	
+	public TreeMap<String, Double> getWorkingHours()
+	{
+		return this.workingHours;
+	}
+	
+	public ArrayList<Task> getProject()
+	{
+		return this.project;
 	}
 }

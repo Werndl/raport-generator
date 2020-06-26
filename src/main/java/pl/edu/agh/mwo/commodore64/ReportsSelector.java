@@ -118,7 +118,7 @@ public class ReportsSelector {
                 case 6:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-                    System.out.print(6);
+                    Report6 report6 = new Report6(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 7:

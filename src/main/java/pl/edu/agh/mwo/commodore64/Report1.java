@@ -17,20 +17,21 @@ public class Report1 {
 	public Report1(ArrayList<Task> tasks, String yearFilter) {
 
 		data.clear();
-		
-		System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println("Alfabetyczna lista pracowników za rok " + yearFilter);
-		for (Task i : tasks) {
-			if (i.getYear().equals(yearFilter)) {
-				filtredDatas.add(i);
+		if (ifYearExists(tasks, yearFilter)) {
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("Alfabetyczna lista pracowników za rok " + yearFilter);
+			for (Task i : tasks) {
+				if (i.getYear().equals(yearFilter)) {
+					filtredDatas.add(i);
+				}
+	
 			}
-
+			fillReport();
+			printReport();
 		}
-		fillReport();
-		printReport();
 	}
 
-	private void fillReport() {
+	public void fillReport() {
 
 		for (Task i : filtredDatas) {
 			if (reportDatas.containsKey(i.getPerson()) == true) {
@@ -64,6 +65,16 @@ public class Report1 {
 		System.out.printf("%-41s %-10s", "Suma: ", sum);
 		String[] sumFinal = { "Suma:", "", String.valueOf(sum) };
 		data.add(sumFinal);
+	}
+	
+	public boolean ifYearExists(ArrayList<Task> dataModel, String year) {
+		for (Task t : dataModel) {
+			if (t.getYear().equals(year))
+				return true;
+		}
+
+		System.out.println("Projektu nie prowadzono w " + year + " roku!");
+		return false;
 	}
 
 	public static String[] getColumns() {

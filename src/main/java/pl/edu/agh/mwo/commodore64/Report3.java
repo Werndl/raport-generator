@@ -48,7 +48,7 @@ public class Report3 {
 		}
 	}
 
-	private void fillReport() {
+	public void fillReport() {
 		for (Task t : projectWorkers) {
 			String key = makeCompoundKey(t.getMonth(), t.getProject());
 			if (workingHours.containsKey(key)) {
@@ -61,7 +61,7 @@ public class Report3 {
 		}
 	}
 
-	private void printReport() {
+	public void printReport() {
 
 		int index = 1;
 		System.out.printf("%-10s %-15s %-20s %-10s\n", columns);
