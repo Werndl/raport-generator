@@ -4,7 +4,7 @@
 * [Uruchomienie aplikacji](#uruchomienie-aplikacji)
 * [Menu](#menu)
 * [Raporty](#raporty)
-* [Koniec pracy](#koniec-pracy)
+* [Koniec pracy programu](#koniec-pracy-programu)
 * [Obsługa błędów](#obsluga-bledow)
 ## Wprowadzenie
 ### Informacje ogólne
