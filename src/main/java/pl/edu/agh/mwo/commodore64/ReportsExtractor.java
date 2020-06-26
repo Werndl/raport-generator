@@ -84,6 +84,7 @@ public class ReportsExtractor {
 
 	private static String getFilePath() {
 		Scanner scan = new Scanner(System.in);
+		Scanner scan2 = new Scanner(System.in);
 		fileName = null;
 		while (fileName == null || fileName.contains(Intro.getReportsPath())) {
 			System.out.print("Proszę podać ścieżkę do zapisania pliku:");
@@ -99,6 +100,13 @@ public class ReportsExtractor {
 
 		File f = new File(fileName);
 		if (!f.exists()) {
+			System.out.println("PODANA ŚCIEŻKA JEST BŁĘDNA");
+			System.out.println("WPISZ: 1 jeśli chcesz spróbować jeszcze raz lub wciśnij inny klawisz jeśli chcesz wrócić do menu.");
+			String nextTry = scan2.next();
+			if (nextTry.equals("1")) {
+				getFilePath();
+				return fileName;
+			}
 			return null;
 		}
 		return fileName;
