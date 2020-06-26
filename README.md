@@ -64,7 +64,44 @@ Wpisz wybraną opcję:
 Zadaniem użytkownika jest wprowadzenie do konsoli kodu raportu, który chce wygenerować.
 
 ## Raporty
+#### Raport nr 1
+Parametrem raportu jest rok. 
+```sh
+Generowanie raportu numer: 1
+++++++++++++++++++++++++++++++++++++++++++
+Podaj rok, dla którego chcesz wygenerować raport: 2018
+++++++++++++++++++++++++++++++++++++++++++
+Alfabetyczna lista pracowników za rok 2018
+Lp         Pracownik                      Godziny [h]
+1          Damian Kowal                   194.7     
+2          Katarzyna Mara                 135       
+3          Marta Bolas                    72        
+Suma:                                     401.7     
+++++++++++++++++++++++++++++++++++++++++++
 
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+```
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 2
+Parametrem raportu jest rok.
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 3
+Parametrami raportu są rok i pracownik. 
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 4
+Parametrem raportu jest rok. 
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 5
+Parametrem raportu jest nazwa projektu. 
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 6
+Parametrem raportu jest rok.
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+#### Raport nr 7
+Parametrem raportu jest jest rok.
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+### Generacja pliku do pliku Excel
 ## Koniec pracy
 Program można zakończyć z dwóch poziomów aplikacji. 
 Z poziomu opcji MENU, po wybraniu kodu 0, program zakończy swoją pracę.
@@ -244,3 +281,15 @@ Czy chcesz wygenerować kolejny raport?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+Jeśli użytkownik będzie chciał zapisać plik w folderze katalogu, progran na to nie pozwoli.
+```sh
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+1
+Proszę podać ścieżkę do zapisania pliku:E:\jnodz\Documents\IT\PROJEKT\raport-generator\resources\dane1
+Plik nie może zostać zapisany w katalogu danych. Spróbuj ponownie
+Proszę podać ścieżkę do zapisania pliku:
+```
+Zadaniem użytkownnika jest podanie innej lokalizacji folderu.
