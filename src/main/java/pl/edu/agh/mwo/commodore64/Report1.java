@@ -84,7 +84,7 @@ public class Report1 {
 				return true;
 		}
 
-		System.out.println("Brak danych na rok " + year);
+		System.out.println("Projektu nie prowadzono w " + year + " roku!");
 		return false;
 	}
 
