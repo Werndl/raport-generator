@@ -66,7 +66,29 @@ Zadaniem użytkownika jest wprowadzenie do konsoli kodu raportu, który chce wyg
 ## Raporty
 
 ## Koniec pracy
+Program można zakończyć z dwóch poziomów aplikacji. 
+Z poziomu opcji MENU, po wybraniu kodu 0, program zakończy swoją pracę.
+```sh
+Wybierz z poniższych opcji raport który chcesz wygenerować:
+Raport 1: Alfabetyczna lista pracowników za dany rok. WPISZ: 1
+Raport 2: Alfabetyczna lista projektów za dany rok. WPISZ: 2
+Raport 3: Szczegółowy wykaz pracy danego pracownika. WPISZ: 3
+Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WPISZ: 4
+Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
+Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
+Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
+Wyjście z programu. WPISZ: 0
 
+Wpisz wybraną opcję: 0
+Koniec pracy
+```
+Istnieje również możliwość zakończenia pracy aplikacji po wygenerowaniu raportu. Użytkownik zostanie zapytany o chęć generacji kolejnego raportu (wciśnięcie klawisza 1). Po wciśnięciu dowolnego klawisze, który nie równa się 1, program zakończy pracę.
+```sh
+Czy chcesz wygenerować kolejny raport?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+Any
+Koniec pracy
+```
 ## Obsluga bledow
 ### Niepoprawna ścieżka katalogu
 W przypadku podania przez użytkownika błędnej ścieżki do katalogu danych, program odpowiednio zareaguje. Zostanie wyświetlony komunikat, że podana ścieżka jest błędna. Aplikacja zapyta użytkownika o ponowne wprowadzenie ścieżki.
@@ -186,6 +208,11 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 4
+Parametrem raportu jest rok. W przypadku wprowadzenia niewłaściwego parametru, który nie istnieje w katalogu danych, zostanie wyświetlony odpowiedni komunikat, że danych na wybrany rok brakuje.
+```sh
+
+```
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 5
 Parametrem raportu jest nazwa projektu. W przypadku wprowadzenia niewłaściwego parametru, który nie istnieje w katalogu danych, zostanie wyświetlony odpowiedni komunikat, że dane wybranego projektu nie istnieją.
 ```sh
@@ -202,3 +229,18 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Błędy przy generacji pliku Excel
+W momencie genrowania raportu, użytkownik zostanie poproszony o podanie ścieżki, w której będzie chciał zapisać plik. Jeśli będzie ona nieprawidłowa, zostanie wyświetlony odpowiedni komunikat i menu do generacji pliku zostanie zamknięte.
+```sh
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować raport do pliku Excel?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+1
+Proszę podać ścieżkę do zapisania pliku: invalid path
+PODANA ŚCIEŻKA JEST BŁĘDNA. Powrót do Menu
+++++++++++++++++++++++++++++++++++++++++++
+
+Czy chcesz wygenerować kolejny raport?
+WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
+```
+Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
