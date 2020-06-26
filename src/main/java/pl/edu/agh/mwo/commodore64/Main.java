@@ -1,5 +1,8 @@
 package pl.edu.agh.mwo.commodore64;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class Main
 {
 	public static void main(String[] args)

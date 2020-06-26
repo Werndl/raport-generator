@@ -3,6 +3,9 @@ package pl.edu.agh.mwo.commodore64;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.swing.JFrame;
+
+import org.apache.fontbox.util.autodetect.WindowsFontDirFinder;
 import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.SwingWrapper;
 
@@ -35,6 +38,6 @@ public class Report6
 		fillChartData();
 		BarChart reportAsChart = new BarChart(year, projectsList, hoursList);
 	    CategoryChart chart = reportAsChart.getChart();
-	    new SwingWrapper<CategoryChart>(chart).displayChart();
+	    new SwingWrapper<CategoryChart>(chart).displayChart().setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 	}
 }
