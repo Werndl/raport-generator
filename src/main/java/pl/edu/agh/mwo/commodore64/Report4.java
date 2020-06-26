@@ -53,7 +53,25 @@ public class Report4 {
 	
 	private void printReport() {
 		
+		int index = 1;
+		System.out.printf("%-10s %-30s %-10s %-10s %-10s\n", Arrays.toString(columns.toArray()));
 		
+		for(PersonProjects pp: personsProjects) {
+			System.out.printf("%-10s %-30s", index, pp.person);
+			for(Map.Entry<String, Double> entry : pp.projectsByPercent.entrySet()) {
+				for(String s: allProjects) {
+					if(s.equals(entry.getKey())) {
+						System.out.printf("Value: %.2f", entry.getValue());
+					}
+					else {
+						System.out.print("---");
+					}
+					
+				}
+			}
+			index++;
+			System.out.println();
+		}
 		
 		
 	}
