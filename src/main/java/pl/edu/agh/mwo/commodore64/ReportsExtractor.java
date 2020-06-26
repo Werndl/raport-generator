@@ -84,7 +84,7 @@ public class ReportsExtractor {
 
 	private static String getFilePath() {
 		Scanner scan = new Scanner(System.in);
-
+		fileName = null;
 		while (fileName == null || fileName.contains(Intro.getReportsPath())) {
 			System.out.print("Proszę podać scieżkę do zapisania pliku:");
 			fileName = scan.nextLine();
