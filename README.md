@@ -105,8 +105,9 @@ Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to z
 Czy chcesz wygenerować raport do pliku Excel?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 1
-Proszę podać ścieżkę do zapisania pliku: C:\Users\Beata\Documents
-Powrót do Menu
+Proszę podać ścieżkę do zapisania pliku:C:\Users\Beata\Documents
+Proszę podać nazwę raportu: 2020_projekty
+Wygenerowany raport jest dostępny w wybranej lokalizacji!
 ```
 ## Koniec pracy programu
 Program można zakończyć z dwóch poziomów aplikacji. 
