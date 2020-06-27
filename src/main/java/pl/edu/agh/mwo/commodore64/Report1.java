@@ -53,12 +53,20 @@ public class Report1 {
 		for (Map.Entry<String, Double> entry : reportDatas.entrySet()) {
 			String person = entry.getKey();
 			Double hours = entry.getValue();
-			String hoursStr = String.format("%1.2f", hours);
+			int hoursVal = 0;
 
-			String[] values = { String.valueOf(index), person, hoursStr };
-			System.out.printf("%-10s %-30s %-10s\n", values);
-
-			data.add(values);
+			if (hours % 1 == 0) {
+				hoursVal = (int) Math.round(hours);
+				String[] values = { String.valueOf(index), person, String.valueOf(hoursVal)};
+				System.out.printf("%-10s %-30s %-10s\n", values);
+				data.add(values);
+			}
+			else {
+				String hoursStr = String.format("%1.2f", hours);
+				String[] values = { String.valueOf(index), person, hoursStr };
+				System.out.printf("%-10s %-30s %-10s\n", values);
+				data.add(values);
+			}
 			sum += hours;
 			index++;
 		}

@@ -103,13 +103,23 @@ public class Report3 {
 			String[] monthName = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień",
 					"Wrzesień", "Pażdziernik", "Listopad", "Grudzień" };
 			String project = keyValues[1];
-			String hoursStr = String.format("%1.2f", hours);
 
-			String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
-					hoursStr };
-			System.out.printf("%-10s %-15s %-20s %-10s\n", values);
-			data.add(values);
+			int hoursVal = 0;
 
+			if (hours % 1 == 0) {
+				hoursVal = (int) Math.round(hours);
+				String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
+						String.valueOf(hoursVal) };
+				System.out.printf("%-10s %-15s %-20s %-10s\n", values);
+				data.add(values);
+			}
+			else {
+				String hoursStr = String.format("%1.2f", hours);
+				String[] values = { String.valueOf(index), monthName[Integer.parseInt(month) - 1], project,
+						hoursStr };
+				System.out.printf("%-10s %-15s %-20s %-10s\n", values);
+				data.add(values);
+			}
 			index++;
 		}
 	}
