@@ -45,8 +45,11 @@ Witamy w programie raportów pracowniczych!
 
 Proszę podać ścieżkę katalogu danych:
 ```
+### Uruchomienie
+Aby uruchomić program, należy, w konsoli wpisać polecenie: java -jar, oraz podać pełną ścieżkę wygenerowanego pliku z rozszerzeniem .jar.
+
 ## Menu
-Po sukcesywnym odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z którego użytkownik wybierze interesujący go raport.
+Po odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z którego użytkownik wybierze interesujący go raport.
 ```sh
 Wybierz z poniższych opcji raport który chcesz wygenerować:
 Raport 1: Alfabetyczna lista pracowników za dany rok. WPISZ: 1
