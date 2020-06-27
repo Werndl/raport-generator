@@ -55,7 +55,6 @@ Raport 3: Szczegółowy wykaz pracy danego pracownika. WPISZ: 3
 Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WPISZ: 4
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
-Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
 Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
@@ -156,9 +155,6 @@ Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to z
 #### Raport nr 6
 Parametrem raportu jest rok.
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
-#### Raport nr 7
-Parametrem raportu jest jest rok.
-Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Log błędów
 Istnieje możliwość wyświetlenia błędów w podanych danych. Po wybraniu przez użytkownika kodu 8, na konsoli zostanie pokazany rodzaj błędu oraz jego konkretną lokalizację w pliku. Każdy zapis błędu przedstawia również ścieżkę pliku, w którym program znalazł nieprawidłowe dane.
 ### Generacja reportu do pliku Excel
@@ -181,7 +177,6 @@ Raport 3: Szczegółowy wykaz pracy danego pracownika. WPISZ: 3
 Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WPISZ: 4
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
-Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
 Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
@@ -237,7 +232,6 @@ Raport 3: Szczegółowy wykaz pracy danego pracownika. WPISZ: 3
 Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WPISZ: 4
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
-Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
 Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
