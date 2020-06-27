@@ -5,6 +5,29 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>report-generator</name>
   <description>MWO final assignment</description>
+   
+  <build>
+  <finalName>Commodore64</finalName>
+  <plugins>
+  <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>repackage</goal>
+            </goals>
+            <configuration>
+                <classifier>spring-boot</classifier>
+                <mainClass>
+                  pl.edu.agh.mwo.commodore64.Main
+                </mainClass>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+  </plugins>
+  </build>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

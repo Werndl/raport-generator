@@ -18,7 +18,7 @@ public class Report6
 	public Report6(ArrayList<Task> dataModel, String year)
 	{
 		report2 = new Report2(dataModel, year, 0);
-		displayChart(year);
+		if(report2.ifYearExists(dataModel, year)) displayChart(year);
 	}
 	
 	public void fillChartData()
