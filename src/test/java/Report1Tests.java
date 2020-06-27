@@ -40,10 +40,10 @@ public class Report1Tests {
         Assert.assertThat(outContent.toString(), Matchers.containsString("++++++++++++++++++++++++++++++++++++++++++"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Alfabetyczna lista pracowników za rok 2018"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Lp         Pracownik                      Godziny [h]"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Damian Kowal                   584.0999999999999"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Katarzyna Mara                 405"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Marta Bolas                    216"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     1205.1    "));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Damian Kowal                   584,10"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Katarzyna Mara                 405,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Marta Bolas                    216,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     1205,10   "));
     }
 
     @Test

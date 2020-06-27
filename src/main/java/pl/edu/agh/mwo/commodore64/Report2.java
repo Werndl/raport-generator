@@ -13,7 +13,7 @@ public class Report2 {
 	private static ArrayList<String[]> data = new ArrayList<>();
 
 	public Report2(ArrayList<Task> dataModel, String year) {
-		
+
 		data.clear();
 		if (ifYearExists(dataModel, year)) {
 			System.out.println("++++++++++++++++++++++++++++++++++++++++++");
@@ -27,7 +27,7 @@ public class Report2 {
 			printReport();
 		}
 	}
-	
+
 	public Report2(ArrayList<Task> dataModel, String year, int reportIndex)
 	{
 		for (Task t : dataModel)
@@ -57,27 +57,17 @@ public class Report2 {
 			String project = entry.getKey();
 			Double hours = entry.getValue();
 
-			int hoursVal = 0;
+			String hoursStr = String.format("%1.2f", hours);
+			String[] values = { String.valueOf(index), project, hoursStr };
+			System.out.printf("%-10s %-30s %-10s\n", values);
 
-			if (hours % 1 == 0) {
-				hoursVal = (int) Math.round(hours);
-				String[] values = { String.valueOf(index), project,String.valueOf(hoursVal) };
-				System.out.printf("%-10s %-30s %-10s\n", values);
-
-				data.add(values);
-			}
-			else {
-				String[] values = { String.valueOf(index), project, hours.toString() };
-				System.out.printf("%-10s %-30s %-10s\n", values);
-
-				data.add(values);
-			}
+			data.add(values);
 			sum += hours;
 			index++;
 		}
-
-		System.out.printf("%-41s %-10s", "Suma: ", sum);
-		String[] sumFinal = { "Suma:", "", String.valueOf(sum) };
+		String sumStr = String.format("%1.2f", sum);
+		System.out.printf("%-41s %-10s", "Suma: ", sumStr);
+		String[] sumFinal = { "Suma:", "", sumStr };
 		data.add(sumFinal);
 	}
 
@@ -106,12 +96,12 @@ public class Report2 {
 	public void setData(ArrayList<String[]> data) {
 		this.data = data;
 	}
-	
+
 	public TreeMap<String, Double> getWorkingHours()
 	{
 		return this.workingHours;
 	}
-	
+
 	public ArrayList<Task> getProject()
 	{
 		return this.project;
