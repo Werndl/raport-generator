@@ -46,7 +46,10 @@ Witamy w programie raportów pracowniczych!
 Proszę podać ścieżkę katalogu danych:
 ```
 ### Uruchomienie
-Aby uruchomić program, należy, w konsoli wpisać polecenie: java -jar, oraz podać pełną ścieżkę wygenerowanego pliku z rozszerzeniem .jar.
+Aby uruchomić program, należy, w konsoli wpisać polecenie:
+```shjava -jar
+```
+oraz podać pełną ścieżkę wygenerowanego pliku z rozszerzeniem .jar.
 
 ## Menu
 Po odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z którego użytkownik wybierze interesujący go raport.
