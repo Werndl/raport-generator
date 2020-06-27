@@ -17,6 +17,7 @@ public class GetDataFromExcel
 {
 	private ArrayList<Task> dataModel = new ArrayList<Task>();
 	private Task task;
+	private static ArrayList<String> logData = new ArrayList<>();
 	
 	public ArrayList<Task> getDataModel() {return this.dataModel;}
 	
@@ -43,7 +44,8 @@ public class GetDataFromExcel
 				{
 					if(c.getCellType() == CellType.BLANK)
 					{
-						System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") jest pusta!");
+						logData.add(path);
+						logData.add("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") jest pusta!");
 						break;
 					}
 					
@@ -63,13 +65,15 @@ public class GetDataFromExcel
 							}
 							else
 							{
-								System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") - data nie jest zgodna z układem katalogow!");
+								logData.add(path);
+								logData.add("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") - data nie jest zgodna z układem katalogow!");
 								break;
 							}
 						}
 						else
 						{
-							System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
+							logData.add(path);
+							logData.add("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
 							break;
 						}
 					}
@@ -85,7 +89,8 @@ public class GetDataFromExcel
 						}
 						else
 						{
-							System.out.println("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
+							logData.add(path);
+							logData.add("Projekt: " + sh.getSheetName() + " - " + "Komorka (" + (c.getRowIndex() + 1) + ", " + (c.getColumnIndex() + 1) + ") ma niepoprawne dane!");
 							break;
 						}
 					}
@@ -98,6 +103,14 @@ public class GetDataFromExcel
 		}
 	}
 	
+	public static ArrayList<String> getLogData() {
+		return logData;
+	}
+
+	public void setLogData(ArrayList<String> logData) {
+		this.logData = logData;
+	}
+
 	public void GetNameFromPath(String path)
 	{
 		String[] splittedPath = path.split("/");
