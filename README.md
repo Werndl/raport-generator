@@ -47,7 +47,8 @@ Proszę podać ścieżkę katalogu danych:
 ```
 ### Uruchomienie
 Aby uruchomić program, należy, w konsoli wpisać polecenie:
-```shjava -jar
+```sh
+java -jar
 ```
 oraz podać pełną ścieżkę wygenerowanego pliku z rozszerzeniem .jar.
 
