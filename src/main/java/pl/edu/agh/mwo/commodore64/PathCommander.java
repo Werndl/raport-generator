@@ -17,7 +17,7 @@ public class PathCommander {
 		}
  		for (File file : listOfFiles) {
 			if(!file.isDirectory() && file.getName().endsWith(".xls")) {
-				System.out.println("Wczytano: " + path + "/" + file.getName());
+				//System.out.println("Wczytano: " + path + "/" + file.getName());
 				dataGetter.initializePopulation(path + "/" + file.getName());
 			}
 		}
