@@ -67,11 +67,11 @@ public class Report4 {
 			for(Map.Entry<String, Double> entry : pp.projectsByPercent.entrySet()) {
 				for(String s: allProjects) {
 					if(s.equals(entry.getKey())) {
-						System.out.printf("Value: %.2f", entry.getValue());
+						System.out.printf("%-10s", String.format("%.2f", entry.getValue()));
 					}
-					else {
-						System.out.print("---");
-					}
+//					else {
+//						System.out.print("---");
+//					}
 					
 				}
 			}
