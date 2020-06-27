@@ -41,10 +41,10 @@ public class Report2Tests {
         Assert.assertThat(outContent.toString(), Matchers.containsString("++++++++++++++++++++++++++++++++++++++++++"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Alfabetyczna lista projektów za rok 2020"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Lp         Projekt                        Godziny [h]"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Projekt 1                      2185.3999999999996"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Projekt 2                      2476.9920000000006"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Projekt 3                      2209.27"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     6871.662  "));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Projekt 1                      2185,40"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Projekt 2                      2476,99"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Projekt 3                      2209,27"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     6871,66   "));
     }
 
     @Test

@@ -42,13 +42,13 @@ public class Report3Tests {
         Assert.assertThat(outContent.toString(), Matchers.containsString("++++++++++++++++++++++++++++++++++++++++++"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Karol Strassburger | Szczegółowy wykaz pracy za rok 2020"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Lp         Miesiąc         Projekt              Godziny [h]"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Styczeń         Projekt 1            198"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Styczeń         Projekt 2            264"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Styczeń         Projekt 3            240"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("4          Pażdziernik     Projekt 1            2400"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("5          Grudzień        Projekt 1            195.60000000000005"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("6          Grudzień        Projekt 2            297.6000000000001"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("7          Grudzień        Projekt 3            296.3999999999999"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Styczeń         Projekt 1            198,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Styczeń         Projekt 2            264,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("3          Styczeń         Projekt 3            240,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("4          Pażdziernik     Projekt 1            2400,00"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("5          Grudzień        Projekt 1            195,60"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("6          Grudzień        Projekt 2            297,60"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("7          Grudzień        Projekt 3            296,40"));
     }
 
     @Test
