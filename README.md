@@ -29,7 +29,11 @@ Aplikacja została zaimplementowana w środowisku java przez zespół programist
 - dowolne IDE, np. IntelliJ IDEA lub Eclipse
 ### Instalacja
 ```sh
-$ git clone
+$ https://github.com/Werndl/raport-generator/blob/master/Commodore64-spring-boot.jar
+
+CMD:
+java -jar Commodore64-spring-boot.jar
+
 ```
 Administrator katalogu odpowiedzialny jest za dopilnowanie poprawnego nazewnictwa pliku, tj. plik powinien być nazwany unikalnie dla każdego pracownika Imie_Nazwisko.
 
