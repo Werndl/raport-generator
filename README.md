@@ -153,7 +153,8 @@ WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE:
 ```
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 #### Raport nr 6
-Parametrem raportu jest rok.
+Parametrem raportu jest rok. W nowym oknnie zostanie wyświetlony wykres słupkowy do raportu 2.
+
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
 ### Log błędów
 Istnieje możliwość wyświetlenia błędów w podanych danych. Po wybraniu przez użytkownika kodu 8, na konsoli zostanie pokazany rodzaj błędu oraz jego konkretną lokalizację w pliku. Każdy zapis błędu przedstawia również ścieżkę pliku, w którym program znalazł nieprawidłowe dane.
