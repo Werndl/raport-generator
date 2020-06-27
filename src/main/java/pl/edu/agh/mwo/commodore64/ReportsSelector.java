@@ -16,7 +16,7 @@ public class ReportsSelector {
         System.out.println("Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez " +
                 "poszczególnych pracowników w danym projekcie. WPISZ: 5");
         System.out.println("Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6");
-        System.out.println("Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7");
+        //System.out.println("Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7");
         System.out.println("Log błędów: Zapis błędów w podanych danych. WPISZ: 8");
         System.out.println("Wyjście z programu. WPISZ: 0");
     }
@@ -105,8 +105,8 @@ public class ReportsSelector {
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     //Report4 report4 = new Report4(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-                    ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
-                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+                   // ExcelPrinter.checkIfUserWantToPrintExcel(reportOption);
+                   // System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
                 case 5:
                     GeneratingReportInfo(reportOption);
@@ -122,12 +122,12 @@ public class ReportsSelector {
                     Report6 report6 = new Report6(PathCommander.getDataModel(), GetYearToReportGenerating());
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
                     break;
-                case 7:
-                    GeneratingReportInfo(reportOption);
-                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-                    System.out.print(7);
-                    System.out.println("++++++++++++++++++++++++++++++++++++++++++");
-                    break;
+				/*
+				 * case 7: GeneratingReportInfo(reportOption);
+				 * System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+				 * System.out.print(7);
+				 * System.out.println("++++++++++++++++++++++++++++++++++++++++++"); break;
+				 */
                 case 8:
                     GeneratingReportInfo(reportOption);
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++");
