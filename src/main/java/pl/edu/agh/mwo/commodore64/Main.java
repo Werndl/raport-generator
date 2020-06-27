@@ -20,8 +20,11 @@ public class Main
 		 * t.getPerson()); }
 		 */
 		  
-		  ReportsSelector reportSelector = new ReportsSelector();
-		  reportSelector.SelectReport();
-		 
+		//  ReportsSelector reportSelector = new ReportsSelector();
+		 // reportSelector.SelectReport();
+		
+		
+		Report4 test = new Report4(PathCommander.getDataModel(),"2019");
+		
 	}
 }

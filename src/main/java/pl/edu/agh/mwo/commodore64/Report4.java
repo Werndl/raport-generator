@@ -27,11 +27,14 @@ public class Report4 {
 		public Double sum = 0.0;
 		
 	}
+	
+	
+	
 	private Double temp = 0.0;
 	
 	private TreeSet<String> allProjects = new TreeSet<String>();
 	
-	private static ArrayList<String> columns = new ArrayList<String>();
+	private static ArrayList<String> as = new ArrayList<String>();
 	
 	private ArrayList<PersonProjects> personsProjects = new ArrayList<PersonProjects>();
 	
@@ -53,8 +56,11 @@ public class Report4 {
 	
 	private void printReport() {
 		
+		String[] columns = new String[as.size()];
+		as.toArray(columns);
 		int index = 1;
-		System.out.printf("%-10s %-30s %-10s %-10s %-10s\n", Arrays.toString(columns.toArray()));
+		System.out.printf("%-10s %-30s %-10s %-10s %-10s\n", columns);
+		System.out.println();
 		
 		for(PersonProjects pp: personsProjects) {
 			System.out.printf("%-10s %-30s", index, pp.person);
@@ -76,24 +82,46 @@ public class Report4 {
 		
 	}
 	
+	
+//	private void makePersonProjects(ArrayList<Task> filtredDatas) { 
+//		// 1. Make objects from Task filtered by year
+//		// 2. Fill ArrayList with all those objects
+//		for (Task t: filteredDatas) {
+//			for (PersonProjects p: personsProjects) {
+//				if(t.getPerson().equals(p.person)) {
+//					if(p.projects.containsKey(t.getProject())) {
+//						temp = p.projects.get(t.getProject());
+//						p.projects.replace(t.getProject(), temp + Double.parseDouble(t.getHours()));
+//					}
+//					else { p.projects.put(t.getProject(),Double.parseDouble(t.getHours())); }
+//					
+//				}
+//				else { personsProjects.add(new PersonProjects(t.getPerson())); }
+//			}
+//		}
+//	}
+	
 	private void makePersonProjects(ArrayList<Task> filtredDatas) { 
-		// 1. Make objects from Task filtered by year
-		// 2. Fill ArrayList with all those objects
-		for (Task t: filteredDatas) {
-			for (PersonProjects p: personsProjects) {
-				if(t.getPerson().equals(p.person)) {
-					if(p.projects.containsKey(t.getProject())) {
-						temp = p.projects.get(t.getProject());
-						p.projects.replace(t.getProject(), temp + Double.parseDouble(t.getHours()));
-					}
-					else { p.projects.put(t.getProject(),Double.parseDouble(t.getHours())); }
-					
+		TreeSet<String> imiona = new TreeSet<String>();
+		// Robi objekty 
+		for(Task task: filtredDatas) {if(!imiona.contains(task.getPerson())) {imiona.add(task.getPerson());}}
+		for(String osoba: imiona) {personsProjects.add(new PersonProjects(osoba));}
+		// Wypełnia je roboczogodzinami
+		
+		for(PersonProjects pp: personsProjects) {
+			for(Task task:filteredDatas) {
+				if(!pp.projects.containsKey(task.getProject())) {
+					pp.projects.put(task.getProject(),Double.parseDouble(task.getHours()));
 				}
-				else { personsProjects.add(new PersonProjects(t.getPerson())); }
+				else {
+					temp = Double.parseDouble(task.getHours());
+					pp.projects.replace(task.getProject(), temp + Double.parseDouble(task.getHours()));
+				}
 			}
 		}
-	}
-	
+		
+		
+}
 	
 	private void fillAllProjects() {
 		for(PersonProjects pp: personsProjects) {
@@ -118,9 +146,13 @@ public class Report4 {
 	}
 	
 	private void beforePrintTask() {
-		columns.add("Lp");
-		columns.add("Pracownik");
-		for (String a: allProjects) {columns.add(a);}
+		as.add("Lp");
+		as.add("Pracownik");
+		//as.add("Projekt 1");
+		//as.add("Projekt 2");
+		//as.add("Projekt 3");
+		//Iterator<String> iterator =allProjects.descendingIterator();
+		for (String a: allProjects) {as.add(a);}
 	}
 	
 }
