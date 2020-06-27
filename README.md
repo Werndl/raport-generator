@@ -37,7 +37,7 @@ W przypadku występowania pracowników o takim samym nazwisku, do nazwy pliku ko
 
 Opis zachowania programu w przypadku błędnych danych opisany jest w rozdziale 6. Obsługa blędów.
 
-Aplikacja po uruchomieniu wyświetla ekran powitalny i prosi użytkownika o wprowadzenie ścieżki do kotalogu danych.
+Aplikacja po uruchomieniu wyświetla ekran powitalny i prosi użytkownika o wprowadzenie ścieżki do katalogu danych.
 
 ```sh
 ++++++++++++++++++++++++++++++++++++++++++
@@ -46,7 +46,7 @@ Witamy w programie raportów pracowniczych!
 Proszę podać ścieżkę katalogu danych:
 ```
 ## Menu
-Po sukcesywnym odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z ktorego użytownik wybierze interesujący go raport.
+Po sukcesywnym odczycie danych z katalogu, na ekranie aplikacji zostanie wyświetlone MENU, z którego użytkownik wybierze interesujący go raport.
 ```sh
 Wybierz z poniższych opcji raport który chcesz wygenerować:
 Raport 1: Alfabetyczna lista pracowników za dany rok. WPISZ: 1
@@ -56,6 +56,7 @@ Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WP
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
 Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
+Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
 Wpisz wybraną opcję: 
@@ -92,9 +93,9 @@ Podaj rok, dla którego chcesz wygenerować raport: 2020
 Alfabetyczna lista projektów za rok 2020
 Lp         Projekt                        Godziny [h]
 1          Projekt 1                      312.25
-2          Projekt 2                      353.856   
+2          Projekt 2                      353.86   
 3          Projekt 3                      315.61    
-Suma:                                     981.666   
+Suma:                                     981.67  
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
@@ -143,9 +144,9 @@ Szczegółowy wykaz pracy w projekcie: Projekt 1
 Lp         Pracownik                      Godziny [h]
 1          Damian Kowal                   101.5     
 2          Karol Strassburger             278       
-3          Mario Budowlaniec              182.82499999999996
-4          Roksana Ekogroszek             110.75999999999999
-Suma:                                     673.0849999999999
+3          Mario Budowlaniec              182.82
+4          Roksana Ekogroszek             110.75
+Suma:                                     673.08
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
@@ -158,6 +159,8 @@ Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to z
 #### Raport nr 7
 Parametrem raportu jest jest rok.
 Użytkownik dostanie opcję ponownego wygenerowania raportu. Jeśli się na to zdecyduje zostanie przekierowany do MENU.
+### Log błędów
+Istnieje możliwość wyświetlenia błędów w podanych danych. Po wybraniu przez użytkownika kodu 8, na konsoli zostanie pokazany rodzaj błędu oraz jego konkretną lokalizację w pliku. Każdy zapis błędu przedstawia również ścieżkę pliku, w którym program znalazł nieprawidłowe dane.
 ### Generacja reportu do pliku Excel
 ```sh
 Czy chcesz wygenerować raport do pliku Excel?
@@ -179,6 +182,7 @@ Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WP
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
 Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
+Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
 Wpisz wybraną opcję: 0
@@ -207,8 +211,9 @@ Proszę podać ścieżkę katalogu danych:
 ### Niepoprawny format pliku
 Program akceptuje tylko pliki z rozszerzeniem xls. Wszystkie inne typy plików (np. txt, xlsx, doc, etc.) zostaną zignorowane.
 ### Niepoprawne dane
+Program zapisuje wszystkie napotkane błędy w danych pliku Excel w logu błędów.
 #### Puste komórki
-W przypadku gdy program daje informację, że komórka jest pusta, a znajduje się na końcu dokumentu, to mogą tam już być wprowadzone jakieś opcje - wtedy nalezy usunąć wiersz, żeby nie wyświetlał się komunikat.
+W przypadku gdy program daje informację, że komórka jest pusta, a znajduje się na końcu dokumentu, to mogą tam już być wprowadzone jakieś opcje - wtedy należy usunąć wiersz, żeby nie wyświetlał się komunikat.
 ```sh
 Projekt: Projekt 1 - Komorka (7, 1) jest pusta!
 ```
@@ -233,6 +238,7 @@ Raport 4: Procentowe zaangażowanie danego pracownika w projekty za dany rok. WP
 Raport 5: Szczegółowy wykaz pracy w danym projekcie, pokazujący liczbę godzin wypracowanych przez poszczególnych pracowników w danym projekcie. WPISZ: 5
 Raport 6: Generowanie wykresu słupkowego do raportu 2. WPISZ: 6
 Raport 7: Wykres kołowy do raportu 4 dla danego pracownika. WPISZ: 7
+Log błędów: Zapis błędów w podanych danych. WPISZ: 8
 Wyjście z programu. WPISZ: 0
 
 Wpisz wybraną opcję: 9
@@ -284,7 +290,7 @@ Brak danych na rok 2014
 Czy chcesz wygenerować kolejny raport?
 WPISZ: 1 jeśli TAK, wciśnij inny klawisz jeśli NIE: 
 ```
-Jeżeli pracownik w ogóle nie istenieje w danym katalogu, użytkownik zostanie o tym fakcie poinformowany.
+Jeżeli pracownik w ogóle nie istnieje w danym katalogu, użytkownik zostanie o tym fakcie poinformowany.
 ```sh
 Generowanie raportu numer: 3
 ++++++++++++++++++++++++++++++++++++++++++
