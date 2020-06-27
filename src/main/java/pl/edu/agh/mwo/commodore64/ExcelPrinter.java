@@ -13,7 +13,7 @@ public class ExcelPrinter {
 			System.out.println("Wygenerowany raport jest dostępny w wybranej lokalizacji!");
 
 		} catch (IOException e) {
-			System.out.println("PODANA ŚCIEŻKA JEST BŁĘDNA. Powrót do Menu");
+			System.out.println("Powrót do Menu");
 			// e.printStackTrace();
 		}
 	}
