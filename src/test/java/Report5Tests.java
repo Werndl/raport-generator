@@ -40,9 +40,9 @@ public class Report5Tests {
         Assert.assertThat(outContent.toString(), Matchers.containsString("++++++++++++++++++++++++++++++++++++++++++"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Szczegółowy wykaz pracy w projekcie: Projekt2"));
         Assert.assertThat(outContent.toString(), Matchers.containsString("Lp         Pracownik                      Godziny [h]"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Damian Kowal                   240,00"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Katarzyna Mara                 330,00"));
-        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     570,00    "));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("1          Damian Kowal                   224"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("2          Katarzyna Mara                 308"));
+        Assert.assertThat(outContent.toString(), Matchers.containsString("Suma:                                     532,00    "));
     }
 
     @Test
