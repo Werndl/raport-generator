@@ -72,10 +72,10 @@ Podaj rok, dla którego chcesz wygenerować raport: 2018
 ++++++++++++++++++++++++++++++++++++++++++
 Alfabetyczna lista pracowników za rok 2018
 Lp         Pracownik                      Godziny [h]
-1          Damian Kowal                   194.7     
+1          Damian Kowal                   194,70     
 2          Katarzyna Mara                 135       
 3          Marta Bolas                    72        
-Suma:                                     401.7     
+Suma:                                     401,70     
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
@@ -91,10 +91,10 @@ Podaj rok, dla którego chcesz wygenerować raport: 2020
 ++++++++++++++++++++++++++++++++++++++++++
 Alfabetyczna lista projektów za rok 2020
 Lp         Projekt                        Godziny [h]
-1          Projekt 1                      312.25
-2          Projekt 2                      353.86   
-3          Projekt 3                      315.61    
-Suma:                                     981.67  
+1          Projekt 1                      312,20    
+2          Projekt 2                      353,86    
+3          Projekt 3                      315,61    
+Suma:                                     981,67  
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
@@ -111,8 +111,8 @@ Podaj imię i nazwisko osoby, dla której chcesz wygenerować raport: Damian Kow
 ++++++++++++++++++++++++++++++++++++++++++
 Damian Kowal | Szczegółowy wykaz pracy za rok 2018
 Lp         Miesiąc         Projekt              Godziny [h]
-1          Styczeń         Projekt 1            13.5      
-2          Styczeń         Projekt 3            1.2       
+1          Styczeń         Projekt 1            13,50     
+2          Styczeń         Projekt 3            1,20      
 3          Styczeń         Projekt2             16        
 4          Luty            Projekt 1            21        
 5          Marzec          Projekt 1            18        
@@ -120,7 +120,7 @@ Lp         Miesiąc         Projekt              Godziny [h]
 7          Kwiecień        Projekt 2            18        
 8          Maj             Projekt 1            27        
 9          Maj             Projekt 2            18        
-10         Sierpień        Projekt 3            40        
+10         Sierpień        Projekt 3            40           
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
@@ -141,11 +141,11 @@ Podaj projekt, dla którego chcesz wygenerować raport: Projekt 1
 ++++++++++++++++++++++++++++++++++++++++++
 Szczegółowy wykaz pracy w projekcie: Projekt 1
 Lp         Pracownik                      Godziny [h]
-1          Damian Kowal                   101.5     
+1          Damian Kowal                   101,50    
 2          Karol Strassburger             278       
-3          Mario Budowlaniec              182.82
-4          Roksana Ekogroszek             110.75
-Suma:                                     673.08
+3          Mario Budowlaniec              182,82    
+4          Roksana Ekogroszek             110,76    
+Suma:                                     673,08  
 ++++++++++++++++++++++++++++++++++++++++++
 
 Czy chcesz wygenerować raport do pliku Excel?
